@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuko Energy Network Corp.</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Images/Tabuko_logo-removebg-preview.png">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- SEO Meta -->
+    <meta name="description" content="Tabuko Energy Network Corp. provides power generation products, engineering services, and energy solutions in the Philippines.">
+    <meta name="keywords" content="Tabuko Energy, power generation, energy solutions, genset controls, engineering services, Laguna Philippines">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="/index.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tabuko Energy Network Corp.">
+    <meta property="og:description" content="Power generation products and engineering services you can trust.">
+    <meta property="og:url" content="/index.html">
+    <meta property="og:image" content="/Images/Tabuko_logo-removebg-preview.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tabuko Energy Network Corp.">
+    <meta name="twitter:description" content="Power generation products and engineering services you can trust.">
+    <meta name="twitter:image" content="/Images/Tabuko_logo-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+<!--NAVBAR CONTENT-->
+    <nav class="navbar">
+      <a class="navbar-logo" href="index.html">
+          <img src="./Images/Tabuko_logo-removebg-preview.png" alt="Company Logo" width="50" height="50">
+          TABUKO ENERGY NETWORK CORP.
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="navbar-desktop">
+        <div class="navbar-links">
+          <ul>
+              <li><a href="/About.html">About</a></li>
+              <li><a href="/Products-and-Services.html">Products & Services</a></li>
+              <li><a href="/ContactUs.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      
+      <!-- Mobile Hamburger Menu -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+          <nav class="mobile-nav">
+            <li><a href="/About.html">About</a></li>
+            <li><a href="/Services.html">Products & Services</a></li>
+            <li><a href="/ContactUs.html">Contact Us</a></li>
+          </nav>
+        </div>
+      </div>
+  </nav>
+
+    <!-- HEADER -->
+    <section class="header">
+        <video class="bg-header" autoplay muted loop playsinline>
+            <source src="Images/video-tabuko1.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-overlay"></div>
+        
+        <div class="container-header">
+            <div class="hero-content fade-in-left">
+                <h1>YOUR ENERGY TO <br>POWER GENERATION.</h1>
+                <p>Your trusted partner in energy solutions.</p>
+                <a href="/about.html" class="explore-button">Explore Now →</a>
+            </div>
+            <img src="Images/TENC Logo.png" alt="Energy Solutions" class="fade-in-right">
+        </div>
+    </section>
+
+    <!-- Updates Section (replaces Products on home page) -->
+
+    <section class="product-section">
+        <h1 class="section-title">Latest Updates</h1>
+        <div class="carousel-container">
+            <div id="updates-feed" class="updates-grid"></div>
+            <div id="carouselIndicators" class="carousel-indicators"></div>
+            <div id="loader" style="text-align:center; padding: 16px;">Loading updates...</div>
+        </div>
+    </section>
+
+    <section class="services-material">
+        <img src="Images/services-images.jpg" alt="Products">
+    
+        <div class="overlay"></div>
+    
+        <div class="content">
+            <h1>Service Solutions</h1>
+            <p>Engineered to deliver performance, reliability, and long-term value.</p>
+        </div>
+    </section>
+     
+    <!-- Products and Services Section -->
+    <section class="products-and-services-container">
+
+        <div>
+            <img src="Images/service-pic.png" alt="" class="service-image">
+        </div>
+
+        <div class="services-container">
+            <div class="grid-services">
+                <div class="service">
+                    <img src="Images/pms-image.png" alt="" class="icon">
+                    <h1 class="title">
+                        Preventive Maintenance Service
+                    </h1>
+                    <p class="description">
+                        Our Preventive Maintenance Service keeps your electrical energy systems safe, reliable, and operating at peak performance. Through routine inspections, testing, and servicing, we detect potential issues early—reducing downtime, preventing failures, and extending equipment life.
+
+                        We maintain electrical panels, transformers, switchgear, generators, UPS systems, and power distribution networks in compliance with industry standards. Our proactive approach improves energy efficiency, enhances safety, and protects your investment.
+
+                        Reliable power starts with preventive care.
+                    </p>
+                </div>
+                <div class="service">
+                    <img src="Images/overhaul.png" alt="" class="icon">
+                    <h1 class="title">
+                        Diesel Engine Overhauling Service
+                    </h1>
+                    <p class="description">
+                        Our Diesel Engine Overhauling Service restores engine reliability, performance, and efficiency. Through complete inspection, disassembly, and precision rebuilding, we identify wear, correct faults, and prevent future failures.
+
+                        We overhaul diesel engines for generators, industrial equipment, and power systems following manufacturer specifications and industry standards. Our structured approach reduces fuel consumption, improves power output, and extends engine service life.
+
+                        Reliable power starts with expert overhauling.
+                    </p>
+                </div>
+                <div class="service">
+                    <img src="Images/upgrading.png" alt="" class="icon">
+                    <h1 class="title">
+                        System Design Upgrading Service
+                    </h1>
+                    <p class="description">
+                        Our System Design Upgrading Service enhances the performance, safety, and efficiency of your electrical and power systems. Through detailed assessment and engineering review, we improve existing designs to meet current demands and future growth.
+
+                        We upgrade power distribution, control systems, and energy infrastructure in accordance with industry standards and operational requirements. Our solutions reduce energy losses, improve reliability, and optimize overall system performance.
+
+                        Smarter systems start with better design.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--Video Carousel -->
+    <section class="vid-auto">
+
+        <video class="slide active" muted playsinline>
+          <source src="Images/video-tabuko1.mp4" type="video/mp4">
+        </video>
+      
+        <video class="slide" muted playsinline>
+          <source src="Images/video-tabuko2.mp4" type="video/mp4">
+        </video>
+      
+        <video class="slide" muted playsinline>
+          <source src="Images/video-tabuko3.mp4" type="video/mp4">
+        </video>
+
+        <div class="vid-text">
+            <h1 class="title-services">Our Services</h1>
+        </div>
+      
+        <button class="clk prev">‹</button>
+        <button class="clk next">›</button>
+      
+        <div class="progress-wrapper">
+          <div class="progress-track"><div class="progress-fill"></div></div>
+          <div class="progress-track"><div class="progress-fill"></div></div>
+          <div class="progress-track"><div class="progress-fill"></div></div>
+        </div>
+        
+    </section>
+      
+
+    <!--Product Section -->
+    <section class="card-products">
+        <h1 class="section-title">Discover Our Products</h1>
+        <div class="wrapper">
+            <div class="card">
+                <img src="Images/AC Motor AMS-71-132 Range.jpg" alt="">
+                <div class="info">
+                    <h1 class="title"> AC Motor AMS-71-132 Range </h1>
+                    <p class="desc">Compact, high-performance asynchronous AC motors designed for variable speed 
+                        drives with dynamic performance.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Images/Woodward Easygen 3000 XT.jpg" alt="">
+                <div class="info">
+                    <h1 class="title">Woodward Easygen 3000 XT</h1>
+                    <p class="desc">Advanced generator control units for engine-generator management across cogeneration, 
+                        standby, AMF, and grid-parallel applications.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Images/Woodward Easygen 2000 Series.avif" alt="">
+                <div class="info">
+                    <h1 class="title"> Woodward Easygen 2000 Series </h1>
+                    <p class="desc">A compact and cost-effective genset control system supporting load sharing, 
+                        parallel operation, and optimized fuel efficiency.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
+                </div>
+            </div>
+        
+            <div class="card">
+                <img src="Images/HMP 250mm.png" alt="">
+                <div class="info">
+                    <h1 class="title"> AC Motor HMP 250mm Range </h1>
+                    <p class="desc">High-performance square-frame AC motors built for demanding industrial 
+                        applications and variable speed control.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Images/DSE8610 MKII.jpg" alt="">
+                <div class="info">
+                    <h1 class="title"> DSE8610 MKII </h1>
+                    <p class="desc">A sophisticated generator control module for complex load sharing and 
+                        synchronization of multiple or grid-connected generators.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Images/DC Motor LAK 6000 Range.png" alt="">
+                <div class="info">
+                    <h1 class="title"> DC Motor LAK 6000 Range </h1>
+                    <p class="desc">High-power DC motors with laminated construction, 
+                        offering outputs up to 1120 kW and flexible mounting options.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="partners-section">
+        <h1 class="section-title">
+            <img src="./Images/Tabuko_logo-removebg-preview.png" alt="Company Logo" style="width: 100px; height: 100px; object-fit: contain;">
+            <span>Our Partners</span>
+        </h1>        
+        <div class="logo_slider fade-in">
+            <div class="overflow">
+                <div class="logos_wrapper">
+                     <!-- Original logos -->
+                    <div class="logo_item"><img src="Images/BalCor Air.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Huegli-removebg-preview.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/EK.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/alphaTechnologies.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/yutaka.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PMI.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Aetna.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/gaston.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/philstock.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/EDS.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/triple a.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/gotesco.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/yokoyama.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/SanMiguel.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/SanMiguelAsia.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/FTech.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/OMTPI.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Danitech.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/DirectE.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/ART.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Alaminos.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PSI.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/AFP.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/nectokin.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Gardenia_Bakery.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Kings.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Microsemi.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/FusoMold.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/SanLazaro.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PNOC.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/MMDA.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PhilRice.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Talavera.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/CAA.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/DFA.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PAGCOR.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PPA.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Palacio.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/TheTent.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/MedicalCenterManila.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Pioneer.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Bulacan.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/NationalMuseum.png" alt=""></div>
+                    
+                    <!-- Duplicate logos for seamless looping -->
+                    <div class="logo_item"><img src="Images/BalCor Air.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Huegli-removebg-preview.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/EK.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/alphaTechnologies.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/yutaka.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PMI.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Aetna.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/gaston.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/philstock.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/EDS.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/triple a.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/gotesco.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/yokoyama.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/SanMiguel.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/SanMiguelAsia.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/FTech.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/OMTPI.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Danitech.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/DirectE.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/ART.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Alaminos.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PSI.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/AFP.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/nectokin.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Gardenia_Bakery.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Kings.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Microsemi.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/FusoMold.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/SanLazaro.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PNOC.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/MMDA.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PhilRice.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Talavera.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/CAA.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/DFA.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PAGCOR.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/PPA.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Palacio.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/TheTent.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/MedicalCenterManila.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Pioneer.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/Bulacan.png" alt=""></div>
+                    <div class="logo_item"><img src="Images/NationalMuseum.png" alt=""></div>
+                </div>
+            </div>
+            <div class="overflow reverse">
+                <div class="logos_wrapper">
+                   <!-- Original logos -->
+                   <div class="logo_item"><img src="Images/BalCor Air.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Huegli-removebg-preview.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/EK.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/alphaTechnologies.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/yutaka.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PMI.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Aetna.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/gaston.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/philstock.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/EDS.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/triple a.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/gotesco.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/yokoyama.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/SanMiguel.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/SanMiguelAsia.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/FTech.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/OMTPI.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Danitech.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/DirectE.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/ART.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Alaminos.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PSI.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/AFP.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/nectokin.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Gardenia_Bakery.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Kings.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Microsemi.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/FusoMold.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/SanLazaro.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PNOC.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/MMDA.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PhilRice.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Talavera.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/CAA.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/DFA.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PAGCOR.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PPA.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Palacio.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/TheTent.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/MedicalCenterManila.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Pioneer.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Bulacan.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/NationalMuseum.png" alt=""></div>
+                   
+                   <!-- Duplicate logos for seamless looping -->
+                   <div class="logo_item"><img src="Images/BalCor Air.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Huegli-removebg-preview.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/EK.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/alphaTechnologies.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/yutaka.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PMI.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Aetna.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/gaston.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/philstock.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/EDS.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/triple a.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/gotesco.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/yokoyama.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/SanMiguel.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/SanMiguelAsia.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/FTech.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/OMTPI.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Danitech.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/DirectE.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/ART.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Alaminos.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PSI.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/AFP.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/nectokin.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Gardenia_Bakery.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Kings.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Microsemi.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/FusoMold.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/SanLazaro.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PNOC.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/MMDA.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PhilRice.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Talavera.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/CAA.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/DFA.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PAGCOR.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/PPA.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Palacio.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/TheTent.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/MedicalCenterManila.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Pioneer.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/Bulacan.png" alt=""></div>
+                   <div class="logo_item"><img src="Images/NationalMuseum.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Footer -->
+<footer>
+    <hr>
+    <div class="footerContainer">
+        <div class="socialIcons">
+            <a href="https://www.facebook.com/TABUKOENERGY.net" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mario-javier-92481772/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/TabukoEnergy" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@mariojavier9850" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+    <div class="footerBottom">
+        <p>&copy; 2025 Tabuko Energy Power Corporation | Purok 1 Brgy. Butong, Cabuyao City, Laguna, Philippines</p>
+    </div>
+</footer>
+
+<!-- Link to external JavaScript file -->
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+</body>
+</html>
