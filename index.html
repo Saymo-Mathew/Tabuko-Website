@@ -73,216 +73,33 @@
       </div>
   </nav>
 
-<!-- HEADER -->
-<section class="header">
-    <div class="container-header">
-        <div class="hero-content fade-in-left">
-            <h1>YOUR ENERGY TO <br>POWER GENERATION.</h1>
-            <p>Your trusted partner in energy solutions.</p>
-            <a href="/about.html" class="explore-button">Explore Now →</a>
+    <!-- HEADER -->
+    <section class="header">
+        <video class="bg-header" autoplay muted loop playsinline>
+            <source src="Images/video-tabuko1.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-overlay"></div>
+        
+        <div class="container-header">
+            <div class="hero-content fade-in-left">
+                <h1>YOUR ENERGY TO <br>POWER GENERATION.</h1>
+                <p>Your trusted partner in energy solutions.</p>
+                <a href="/about.html" class="explore-button">Explore Now →</a>
+            </div>
+            <img src="Images/TENC Logo.png" alt="Energy Solutions" class="fade-in-right">
         </div>
-        <img src="Images/TENC Logo.png" alt="Energy Solutions" class="fade-in-right">
-    </div>
-</section>
+    </section>
 
     <!-- Updates Section (replaces Products on home page) -->
 
     <section class="product-section">
-        <h2 class="section-title">LATEST UPDATES</h2>
+        <h1 class="section-title">Latest Updates</h1>
         <div class="carousel-container">
             <div id="updates-feed" class="updates-grid"></div>
             <div id="carouselIndicators" class="carousel-indicators"></div>
             <div id="loader" style="text-align:center; padding: 16px;">Loading updates...</div>
         </div>
-        
-        <section id="products" style="display:none">
-            <div class="product-grid fade-in">
-                <!-- Barcol-Air -->
-                <div class="product-card" data-category="barcol-air">
-                    <img src="Images/EG3000XT.png" alt="BARCOL-AIR Product" class="product-image zoomable" />
-                    <p class="product-name">Woodward Easygen 3000 XT</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The Woodward easYgen-3000XT series are control units designed for managing engine-generator systems in various applications like cogeneration, standby power, automatic mains failure (AMF), peak shaving, and distributed generation. They offer features for both islanded and mains-parallel operations, including engine control, generator protection, and mains protection. The controllers are also designed for ease of use and customization, with standardized software that can be tailored for specific applications. 
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="barcol-air">
-                    <img src="Images/EasyGen-2000.png" alt="BARCOL-AIR Product" class="product-image zoomable" />
-                    <p class="product-name">Woodward Easygen 2000 Series</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The easYgen-2000 Series is a compact, affordable genset control and protection package for load sharing up to 16 gensets in island operation, or parallel operation of a single unit with a utility. Its integrated load dependent start/stop programming allows you to define how gensets are brought on- and off-line to support changing load demands. It equally works with a mix of different sized engines, so you can maintain the spinning reserve you need while optimizing fuel efficiency.
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="barcol-air">
-                    <img src="Images/Batter-Charger.png" alt="BARCOL-AIR Product" class="product-image zoomable" />
-                    <p class="product-name">BAE Intelligent Battery Recharger CBI2410A</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            In a world increasingly dependent on portable electronic devices, the need for efficient and reliable battery rechargers has never been greater. From smartphones and laptops to electric vehicles and renewable energy storage systems, batteries are integral to modern life. The BAE Intelligent Battery Recharger is poised to meet this demand with its cutting-edge features and smart technology.
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="barcol-air">
-                    <img src="Images/EasyGen-1000.png" alt="BARCOL-AIR Product" class="product-image zoomable" />
-                    <p class="product-name">Woodward Easygen 1000 Series</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The Woodward easYgen-1000 Series is a compact AMF (Automatic Mains Failure) genset controller designed for single-generator sets used in critical standby or prime power applications. It features algorithms and logic for starting, stopping, controlling, and protecting the generator set, along with communication interfaces for automatic changeover, circuit breaker operation, and mains supply monitoring. The controller offers various operational modes (auto, stop, manual) and supports different Electronic Control Unit (ECU) types.
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="barcol-air">
-                    <img src="Images/DTSC-200 ATS.png" alt="BARCOL-AIR Product" class="product-image zoomable" />
-                    <p class="product-name">Woodward DTSC-200 ATS Control</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The Woodward DTSC-200 ATS controller is a flexible digital control unit designed for seamlessly switching electrical power between multiple sources, according to Woodward and EPG Controls. It supports various transfer types (open, delayed, closed) and can be configured for diverse ATS applications like Main-Gen, Gen-Gen, or Main-Main systems. The controller also includes features like sync-check for smooth transfers, transfer inhibit, and load shed/restore options. 
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-                
-                <!--Lightbox Overlay-->
-                <div id="lightbox" class="lightbox">
-                    <span class="close-lightbox">&times;</span>
-                    <img class="lightbox-content" id="lightbox-img">
-                </div>
-
-                <!--T-T Electric -->
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/LAK-2000.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">DC Motor LAK 2000 Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The LAK 2000 range of DC motors from T-T Electric includes fully laminated, 2-pole motors, specifically the LAK 2080-2132 series. These motors are designed for high armature voltages as standard and offer high mechanical and electrical flexibility. They are known for their good commutation, low brush wear, and high thermal time constant.
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/DMP 112-180.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">DC Motor DMP 112-180 Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The DMP 112-180 range of DC motors are available in both 2 and 4 pole configurations, offering frame sizes from 112 to 180, and output power up to 250 kW (335 HP). They are known for being fully laminated and having a square frame design.
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/LAK 6000.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">DC Motor LAK 6000 Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The LAK 6000 series of DC motors, offered by T-T Electric, features 6 poles and frame sizes of 315 and 400, with outputs ranging up to 1120 kW (1500 HP). These motors are fully laminated and offer a wide range of accessories and mountings. 
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/AMP-112-335.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">AC Motor AMP-112-355 Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The T-T Electric AMP 112-355 range comprises high-performance AC motors engineered for variable speed drive applications. These asynchronous motors are designed to deliver dynamic performance comparable to DC motors, making them suitable for various industrial settings. 
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/AMS 71-132.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">AC Motor AMS-71-132 Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The T-T Electric AMS 71-132 range comprises compact, high-performance asynchronous AC motors designed for variable speed drive applications. These motors are engineered to deliver dynamic performance comparable to DC motors, making them suitable for a wide array of industrial uses.
-                        </p> 
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/HMP 250mm.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">AC Motor HMP 250mm Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The HMP 250mm range motor from T-T Electric is a high-performance AC motor designed for demanding industrial applications requiring variable speed control and robust mechanical characteristics. It is part of T-T Electric’s square-frame asynchronous motor series, engineered to deliver dynamic performance comparable to traditional DC motors, making it suitable for both new installations and retrofit projects. 
-                        </p> 
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-                
-                <!--Lightbox Overlay-->
-                <div id="lightbox" class="lightbox">
-                    <span class="close-lightbox">&times;</span>
-                    <img class="lightbox-content" id="lightbox-img">
-                </div>
-
-
-                <!--DSE -->
-                <div class="product-card" data-category="dse">
-                    <img src="Images/DSE7320.png" alt="DSE Product" class="product-image zoomable" />
-                    <p class="product-name">DSE7320 MKII</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The DSE7320 MKII is a powerful, next-generation genset control module designed for single diesel or gas generator applications. It features a Dual Core processor, extended memory, and data logging, offering faster processing and increased functionality. The module monitors various engine parameters and displays information on a back-lit LCD screen, LEDs, remote PCs, and via SMS text alerts.  
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="dse">
-                    <img src="Images/DSE8610.png" alt="DSE Product" class="product-image zoomable" />
-                    <p class="product-name">DSE8610 MKII</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The DSE8610 MKII is a sophisticated control module designed for complex load sharing and synchronizing generator applications, particularly those involving multiple generators or grid-tied systems. It handles advanced features like synchronizing up to 32 generators, both electronic and non-electronic, and provides comprehensive monitoring, metering, and protection features. The DSE8610 MKII also offers various communication and system expansion options, including remote monitoring capabilities.  
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-                
-                <!--Lightbox Overlay-->
-                <div id="lightbox" class="lightbox">
-                    <span class="close-lightbox">&times;</span>
-                    <img class="lightbox-content" id="lightbox-img">
-                </div>
-
-
-
-                <!--PMI -->
-                <div class="product-card" data-category="pmi">
-                    <img src="Images/DC-Battery-Charger.png" alt="DSE Product" class="product-image zoomable" />
-                    <p class="product-name">DC Battery Charger AC/DC</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            A DC battery charger that supports both AC/DC input and communication via Modbus protocol with RS485 and TCP/IP ports is a common solution for industrial applications requiring reliable power and data exchange. These chargers convert AC power to DC and can be used to charge batteries while simultaneously providing DC power to loads. The Modbus communication allows for monitoring, control, and remote management of the charger.  
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-                
-                <!--Lightbox Overlay-->
-                <div id="lightbox" class="lightbox">
-                    <span class="close-lightbox">&times;</span>
-                    <img class="lightbox-content" id="lightbox-img">
-                </div>
-            </div>
-        </section>
     </section>
 
     <section class="services-material">
@@ -298,60 +115,101 @@
      
     <!-- Products and Services Section -->
     <section class="products-and-services-container">
+
         <div>
-            <img src="Images/services-material.jpg" alt="" class="service-image">
+            <img src="Images/service-pic.png" alt="" class="service-image">
         </div>
+
         <div class="services-container">
             <div class="grid-services">
                 <div class="service">
-                    <img src="Images/upgrade-image.png" alt="" class="icon">
+                    <img src="Images/pms-image.png" alt="" class="icon">
                     <h1 class="title">
-                        System design upgrading
+                        Preventive Maintenance Service
                     </h1>
                     <p class="description">
-                        Retrofitting and upgrading power generation controls involve improving or replacing existing systems to enhance performance, 
-                        extend lifespan, and address evolving needs. This can include adding new features, updating software, or replacing hardware. 
-                        Retrofitting focuses on making modifications to existing systems, while upgrading often involves a more complete replacement 
-                        with newer technology.
+                        Our Preventive Maintenance Service keeps your electrical energy systems safe, reliable, and operating at peak performance. Through routine inspections, testing, and servicing, we detect potential issues early—reducing downtime, preventing failures, and extending equipment life.
+
+                        We maintain electrical panels, transformers, switchgear, generators, UPS systems, and power distribution networks in compliance with industry standards. Our proactive approach improves energy efficiency, enhances safety, and protects your investment.
+
+                        Reliable power starts with preventive care.
                     </p>
                 </div>
                 <div class="service">
-                    <img src="Images/upgrade-image.png" alt="" class="icon">
+                    <img src="Images/overhaul.png" alt="" class="icon">
                     <h1 class="title">
-                        System design upgrading
+                        Diesel Engine Overhauling Service
                     </h1>
                     <p class="description">
-                        Retrofitting and upgrading power generation controls involve improving or replacing existing systems to enhance performance, 
-                        extend lifespan, and address evolving needs. This can include adding new features, updating software, or replacing hardware. 
-                        Retrofitting focuses on making modifications to existing systems, while upgrading often involves a more complete replacement 
-                        with newer technology.
+                        Our Diesel Engine Overhauling Service restores engine reliability, performance, and efficiency. Through complete inspection, disassembly, and precision rebuilding, we identify wear, correct faults, and prevent future failures.
+
+                        We overhaul diesel engines for generators, industrial equipment, and power systems following manufacturer specifications and industry standards. Our structured approach reduces fuel consumption, improves power output, and extends engine service life.
+
+                        Reliable power starts with expert overhauling.
                     </p>
                 </div>
                 <div class="service">
-                    <img src="Images/upgrade-image.png" alt="" class="icon">
+                    <img src="Images/upgrading.png" alt="" class="icon">
                     <h1 class="title">
-                        System design upgrading
+                        System Design Upgrading Service
                     </h1>
                     <p class="description">
-                        Retrofitting and upgrading power generation controls involve improving or replacing existing systems to enhance performance, 
-                        extend lifespan, and address evolving needs. This can include adding new features, updating software, or replacing hardware. 
-                        Retrofitting focuses on making modifications to existing systems, while upgrading often involves a more complete replacement 
-                        with newer technology.
+                        Our System Design Upgrading Service enhances the performance, safety, and efficiency of your electrical and power systems. Through detailed assessment and engineering review, we improve existing designs to meet current demands and future growth.
+
+                        We upgrade power distribution, control systems, and energy infrastructure in accordance with industry standards and operational requirements. Our solutions reduce energy losses, improve reliability, and optimize overall system performance.
+
+                        Smarter systems start with better design.
                     </p>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!--Video Carousel -->
+    <section class="vid-auto">
 
+        <video class="slide active" muted playsinline>
+          <source src="Images/video-tabuko1.mp4" type="video/mp4">
+        </video>
+      
+        <video class="slide" muted playsinline>
+          <source src="Images/video-tabuko2.mp4" type="video/mp4">
+        </video>
+      
+        <video class="slide" muted playsinline>
+          <source src="Images/video-tabuko3.mp4" type="video/mp4">
+        </video>
+
+        <div class="vid-text">
+            <h1 class="title-services">Our Services</h1>
+        </div>
+      
+        <button class="clk prev">‹</button>
+        <button class="clk next">›</button>
+      
+        <div class="progress-wrapper">
+          <div class="progress-track"><div class="progress-fill"></div></div>
+          <div class="progress-track"><div class="progress-fill"></div></div>
+          <div class="progress-track"><div class="progress-fill"></div></div>
+        </div>
+        
+    </section>
+      
+
+    <!--Product Section -->
     <section class="card-products">
+        <h1 class="section-title">Discover Our Products</h1>
         <div class="wrapper">
             <div class="card">
                 <img src="Images/AC Motor AMS-71-132 Range.jpg" alt="">
                 <div class="info">
                     <h1 class="title"> AC Motor AMS-71-132 Range </h1>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus repudiandae culpa sequi sapiente alias dolorem 
-                        earum veritatis adipisci qui fugiat hic aperiam molestiae modi, quam nemo assumenda sit deserunt molestias!</p>
-                    <a href="#" class="btn">Read More</a>
+                    <p class="desc">Compact, high-performance asynchronous AC motors designed for variable speed 
+                        drives with dynamic performance.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
                 </div>
             </div>
 
@@ -359,9 +217,12 @@
                 <img src="Images/Woodward Easygen 3000 XT.jpg" alt="">
                 <div class="info">
                     <h1 class="title">Woodward Easygen 3000 XT</h1>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus repudiandae culpa sequi sapiente alias dolorem 
-                        earum veritatis adipisci qui fugiat hic aperiam molestiae modi, quam nemo assumenda sit deserunt molestias!</p>
-                    <a href="#" class="btn">Read More</a>
+                    <p class="desc">Advanced generator control units for engine-generator management across cogeneration, 
+                        standby, AMF, and grid-parallel applications.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
                 </div>
             </div>
 
@@ -369,51 +230,62 @@
                 <img src="Images/Woodward Easygen 2000 Series.avif" alt="">
                 <div class="info">
                     <h1 class="title"> Woodward Easygen 2000 Series </h1>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus repudiandae culpa sequi sapiente alias dolorem 
-                        earum veritatis adipisci qui fugiat hic aperiam molestiae modi, quam nemo assumenda sit deserunt molestias!</p>
-                    <a href="#" class="btn">Read More</a>
+                    <p class="desc">A compact and cost-effective genset control system supporting load sharing, 
+                        parallel operation, and optimized fuel efficiency.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
                 </div>
             </div>
-        </div>
-
-        <div class="wrapper">
+        
             <div class="card">
-                <img src="Images/AMS 71-132.png" alt="">
+                <img src="Images/HMP 250mm.png" alt="">
                 <div class="info">
-                    <h1 class="title"> Woodward Easygen 3000 XT </h1>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus repudiandae culpa sequi sapiente alias dolorem 
-                        earum veritatis adipisci qui fugiat hic aperiam molestiae modi, quam nemo assumenda sit deserunt molestias!</p>
-                    <a href="#" class="btn">Read More</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="Images/AMP-112-335.png" alt="">
-                <div class="info">
-                    <h1 class="title"> Woodward Easygen 3000 XT </h1>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus repudiandae culpa sequi sapiente alias dolorem 
-                        earum veritatis adipisci qui fugiat hic aperiam molestiae modi, quam nemo assumenda sit deserunt molestias!</p>
-                    <a href="#" class="btn">Read More</a>
+                    <h1 class="title"> AC Motor HMP 250mm Range </h1>
+                    <p class="desc">High-performance square-frame AC motors built for demanding industrial 
+                        applications and variable speed control.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
                 </div>
             </div>
 
             <div class="card">
-                <img src="Images/LAK 6000.png" alt="">
+                <img src="Images/DSE8610 MKII.jpg" alt="">
                 <div class="info">
-                    <h1 class="title"> Woodward Easygen 3000 XT </h1>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus repudiandae culpa sequi sapiente alias dolorem 
-                        earum veritatis adipisci qui fugiat hic aperiam molestiae modi, quam nemo assumenda sit deserunt molestias!</p>
-                    <a href="#" class="btn">Read More</a>
+                    <h1 class="title"> DSE8610 MKII </h1>
+                    <p class="desc">A sophisticated generator control module for complex load sharing and 
+                        synchronization of multiple or grid-connected generators.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Images/DC Motor LAK 6000 Range.png" alt="">
+                <div class="info">
+                    <h1 class="title"> DC Motor LAK 6000 Range </h1>
+                    <p class="desc">High-power DC motors with laminated construction, 
+                        offering outputs up to 1120 kW and flexible mounting options.</p>
+                    <a href="/Products-and-Services.html" class="btn">
+                        <span class="text">Read More</span>
+                        <span class="arrow">›</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Partnership Section -->
-    <section class="partners_section">
-        <div class="section_title">
-            <h3>Our Partners</h3>
-        </div>
+    <section class="partners-section">
+        <h1 class="section-title">
+            <img src="./Images/Tabuko_logo-removebg-preview.png" alt="Company Logo" style="width: 100px; height: 100px; object-fit: contain;">
+            <span>Our Partners</span>
+        </h1>        
         <div class="logo_slider fade-in">
             <div class="overflow">
                 <div class="logos_wrapper">

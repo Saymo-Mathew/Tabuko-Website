@@ -833,3 +833,64 @@ function initTraditionalCarousel() {
     }
   }, 30000);
 }
+
+//VIdeo Carousel
+const videos = document.querySelectorAll('.slide');
+const fills = document.querySelectorAll('.progress-fill');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+let index = 0;
+let rafId = null;
+
+function resetProgress() {
+  fills.forEach(f => f.style.width = '0%');
+}
+
+function stopProgress() {
+  cancelAnimationFrame(rafId);
+}
+
+function startProgress(video, fill) {
+  stopProgress();
+
+  function update() {
+    if (!video.duration) return;
+    const percent = (video.currentTime / video.duration) * 100;
+    fill.style.width = percent + '%';
+    rafId = requestAnimationFrame(update);
+  }
+  update();
+}
+
+function showSlide(i) {
+  stopProgress();
+  resetProgress();
+
+  videos.forEach((v, idx) => {
+    v.classList.toggle('active', idx === i);
+    v.pause();
+    v.currentTime = 0;
+  });
+
+  const video = videos[i];
+  video.play();
+  startProgress(video, fills[i]);
+
+  video.onended = () => {
+    index = (index + 1) % videos.length;
+    showSlide(index);
+  };
+}
+
+nextBtn.onclick = () => {
+  index = (index + 1) % videos.length;
+  showSlide(index);
+};
+
+prevBtn.onclick = () => {
+  index = (index - 1 + videos.length) % videos.length;
+  showSlide(index);
+};
+
+showSlide(index);
