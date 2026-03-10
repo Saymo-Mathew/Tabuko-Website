@@ -2,53 +2,25 @@
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav a, .mobile-nav-link');
 
-  // Check if elements exist
-  if (!hamburger || !mobileMenu) {
-    console.error('Hamburger or mobile menu elements not found');
-    console.log('Hamburger element:', hamburger);
-    console.log('Mobile menu element:', mobileMenu);
-    return;
-  }
-  
-  console.log('Hamburger menu initialized successfully');
+  if (!hamburger || !mobileMenu) return;
 
-  // Toggle mobile menu
   hamburger.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
-    
-    console.log('Hamburger clicked!');
-    
-    // Toggle active classes
     hamburger.classList.toggle('active');
     mobileMenu.classList.toggle('active');
-    
-    console.log('Hamburger active:', hamburger.classList.contains('active'));
-    console.log('Mobile menu active:', mobileMenu.classList.contains('active'));
-    
-    // Prevent body scroll when menu is open
-    if (mobileMenu.classList.contains('active')) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
   });
 
-  // Close menu when clicking on navigation links
   mobileNavLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      // Close menu
+    link.addEventListener('click', () => {
       hamburger.classList.remove('active');
       mobileMenu.classList.remove('active');
       document.body.style.overflow = '';
-      
-      // Navigate to the page
       const href = link.getAttribute('href');
-      if (href && href !== '#') {
-        window.location.href = href;
-      }
+      if (href && href !== '#') window.location.href = href;
     });
   });
 
@@ -87,6 +59,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Navbar solid background on scroll (home + inner pages with transparent nav)
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+  const onScroll = () => {
+    if (window.scrollY > 60) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+});
+
 // TEAMS //
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -95,14 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   menuItems.forEach(item => {
       item.addEventListener("click", () => {
-          // Remove 'active' from the previously active tab
-          document.querySelector(".sidebar .active").classList.remove("active");
+          const active = document.querySelector(".sidebar .active");
+          if (active) active.classList.remove("active");
           item.classList.add("active");
-
-          // Get the selected category
           const targetGroup = item.getAttribute("data-target");
-
-          // Show only members that belong to the selected group
           members.forEach(member => {
               if (member.getAttribute("data-group") === targetGroup) {
                   member.style.display = "block";
@@ -111,6 +91,32 @@ document.addEventListener("DOMContentLoaded", () => {
               }
           });
       });
+  });
+});
+
+// Team tabs (About page): Core Group / Board of Directors
+document.addEventListener("DOMContentLoaded", () => {
+  const tabBtns = document.querySelectorAll(".team-tab-btn");
+  const panels = document.querySelectorAll(".team-group[data-team]");
+  if (!tabBtns.length || !panels.length) return;
+
+  function showPanel(teamId) {
+    panels.forEach(p => {
+      const isMatch = p.getAttribute("data-team") === teamId;
+      p.classList.toggle("team-group--hidden", !isMatch);
+      p.setAttribute("aria-hidden", isMatch ? "false" : "true");
+    });
+    tabBtns.forEach(btn => {
+      const isActive = btn.getAttribute("data-team") === teamId;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+  }
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      showPanel(btn.getAttribute("data-team"));
+    });
   });
 });
 
@@ -163,30 +169,25 @@ filterButtons.forEach(button => {
     });
 });
 
+// Read more / Read less (works for either `.more-text` spans or clamped containers)
 document.querySelectorAll('.read-more-btn').forEach(button => {
     button.addEventListener('click', () => {
-        const moreText = button.previousElementSibling.querySelector('.more-text');
-        if (moreText.style.display === 'inline') {
-            moreText.style.display = 'none';
-            button.textContent = 'Read more';
-        } else {
-            moreText.style.display = 'inline';
-            button.textContent = 'Read less';
+        const target = button.previousElementSibling;
+        if (!target) return;
+
+        const moreText = (typeof target.querySelector === 'function') ? target.querySelector('.more-text') : null;
+
+        // Variant A: explicit hidden span
+        if (moreText) {
+            const isOpen = moreText.style.display === 'inline';
+            moreText.style.display = isOpen ? 'none' : 'inline';
+            button.textContent = isOpen ? 'Read more' : 'Read less';
+            return;
         }
-    });
-});
 
-document.querySelectorAll('.read-more-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const descContainer = button.previousElementSibling;
-
-        descContainer.classList.toggle('expanded');
-
-        if (descContainer.classList.contains('expanded')) {
-            button.textContent = 'Read less';
-        } else {
-            button.textContent = 'Read more';
-        }
+        // Variant B: toggle expanded class on the container element
+        target.classList.toggle('expanded');
+        button.textContent = target.classList.contains('expanded') ? 'Read less' : 'Read more';
     });
 });
 
@@ -239,6 +240,111 @@ document.addEventListener("DOMContentLoaded", function () {
 if (typeof AOS !== 'undefined' && AOS && typeof AOS.init === 'function') {
 AOS.init();
 }
+
+// Profile gallery (Company Profile page and About page)
+(function () {
+    // About page: fixed list of company profile images 1–18 (.webp)
+    var aboutProfileSrcs = [];
+    for (var n = 1; n <= 18; n++) {
+        aboutProfileSrcs.push('Images/updated company profile (1)-' + n + '.webp');
+    }
+
+    function buildSrcList(index) {
+        var idx = String(index);
+        return [
+            'Images/pic' + idx + '.png',
+            'Images/pic ' + idx + '.png',
+            'Images/pic' + idx + '.jpg',
+            'Images/pic ' + idx + '.jpg',
+            'Images/pic' + idx + ' (1).png',
+            'Images/pic' + (index === 1 ? '1 (1)' : ' ' + idx + ' (1)') + '.png',
+            'Images/' + idx + '.png',
+            'Images/' + idx + '.jpg'
+        ];
+    }
+    function tryLoad(list, onSuccess) {
+        if (!list || !list.length) return;
+        var src = list.shift();
+        var probe = new Image();
+        probe.onload = function () { onSuccess(src); };
+        probe.onerror = function () { tryLoad(list, onSuccess); };
+        probe.src = src;
+    }
+    function addImageToGallery(galleryEl, src, index) {
+        var wrap = document.createElement('figure');
+        wrap.className = 'profile-card';
+        var img = document.createElement('img');
+        img.alt = 'Company profile page ' + (index != null ? index + 1 : '');
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.src = src;
+        img.addEventListener('click', function () { openLightbox(src, index); });
+        wrap.appendChild(img);
+        galleryEl.appendChild(wrap);
+    }
+    function buildGallery(galleryEl, useAboutProfileImages) {
+        if (!galleryEl) return;
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        var closeBtn = document.querySelector('.close-lightbox');
+        var prevBtn = document.getElementById('lightbox-prev');
+        var nextBtn = document.getElementById('lightbox-next');
+        var counterEl = document.getElementById('lightbox-counter');
+        var currentIndex = 0;
+        var srcList = [];
+
+        function showSlide(index) {
+            if (!srcList.length) return;
+            currentIndex = (index + srcList.length) % srcList.length;
+            if (lightboxImg) lightboxImg.src = srcList[currentIndex];
+            if (counterEl) counterEl.textContent = (currentIndex + 1) + ' / ' + srcList.length;
+        }
+        function openLightbox(src, index) {
+            if (!lightbox || !lightboxImg) return;
+            if (useAboutProfileImages && srcList.length) {
+                currentIndex = index != null ? index : srcList.indexOf(src);
+                if (currentIndex < 0) currentIndex = 0;
+                lightboxImg.src = srcList[currentIndex];
+                if (counterEl) counterEl.textContent = (currentIndex + 1) + ' / ' + srcList.length;
+            } else {
+                lightboxImg.src = src;
+                if (counterEl) counterEl.textContent = '';
+            }
+            lightbox.style.display = 'flex';
+            lightbox.setAttribute('aria-hidden', 'false');
+        }
+        function closeLightbox() {
+            if (!lightbox) return;
+            lightbox.style.display = 'none';
+            lightbox.setAttribute('aria-hidden', 'true');
+        }
+        if (useAboutProfileImages) {
+            srcList = aboutProfileSrcs.slice();
+            aboutProfileSrcs.forEach(function (src, idx) { addImageToGallery(galleryEl, src, idx); });
+            if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); showSlide(currentIndex - 1); });
+            if (nextBtn) nextBtn.addEventListener('click', function (e) { e.stopPropagation(); showSlide(currentIndex + 1); });
+            document.addEventListener('keydown', function keyHandler(e) {
+                if (lightbox.style.display !== 'flex') return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showSlide(currentIndex - 1);
+                if (e.key === 'ArrowRight') showSlide(currentIndex + 1);
+            });
+        } else {
+            for (var i = 1; i <= 22; i++) {
+                tryLoad(buildSrcList(i), function (src) { addImageToGallery(galleryEl, src, null); });
+            }
+        }
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+        if (lightbox) lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        var aboutGallery = document.getElementById('about-profile-gallery');
+        var profileGallery = document.getElementById('profile-gallery');
+        if (aboutGallery) buildGallery(aboutGallery, true);
+        if (profileGallery) buildGallery(profileGallery, false);
+    });
+})();
 
 async function loadFacebookFeed() {
   const updatesFeedEl = document.getElementById("updates-feed");
@@ -445,6 +551,468 @@ function removeAutoScrollElements() {
       element.remove();
     }
   });
+}
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+          target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+          });
+      }
+  });
+});
+
+// Toggle Description Panel with slide-in animation
+function toggleDescription(event, btn) {
+  event.preventDefault();
+  const serviceCard = btn.closest('.service-card');
+  const panel = serviceCard.querySelector('.description-panel');
+  
+  if (panel.classList.contains('active')) {
+      closeDescriptionPanel(panel);
+  } else {
+      // Close any other open panels first
+      document.querySelectorAll('.description-panel.active').forEach(openPanel => {
+          closeDescriptionPanel(openPanel);
+      });
+      
+      // Slide in the panel
+      panel.classList.add('active');
+  }
+}
+
+function closeDescriptionPanel(panelOrBtn) {
+  let panel;
+  
+  if (panelOrBtn && panelOrBtn.classList && panelOrBtn.classList.contains('panel-close')) {
+      // Called from close button - find the parent panel
+      panel = panelOrBtn.closest('.description-panel');
+  } else if (panelOrBtn && panelOrBtn.classList && panelOrBtn.classList.contains('description-panel')) {
+      // Called with panel directly
+      panel = panelOrBtn;
+  } else {
+      // Find any active panel
+      panel = document.querySelector('.description-panel.active');
+  }
+  
+  if (panel) {
+      panel.classList.remove('active');
+  }
+}
+
+// Logo carousel navigation (shows 2 logos at a time)
+function updateCarouselButtons(carousel) {
+  const container = carousel.querySelector('.client-logo-container');
+  const items = container.querySelectorAll('.client-item');
+  const active = container.querySelector('.client-item.active');
+  const currentIndex = Array.from(items).indexOf(active);
+  const prevBtn = carousel.querySelector('.prev-btn');
+  const nextBtn = carousel.querySelector('.next-btn');
+  
+  // Hide previous button when at start (index 0 or 1)
+  if (currentIndex === 0 || currentIndex === 1) {
+      prevBtn.style.visibility = 'hidden';
+  } else {
+      prevBtn.style.visibility = 'visible';
+  }
+  
+  // Hide next button when at the last visible pair
+  if (currentIndex >= items.length - 2) {
+      nextBtn.style.visibility = 'hidden';
+  } else {
+      nextBtn.style.visibility = 'visible';
+  }
+}
+
+function nextLogo(button) {
+  const carousel = button.closest('.logo-carousel');
+  const container = carousel.querySelector('.client-logo-container');
+  const items = container.querySelectorAll('.client-item');
+  const active = container.querySelector('.client-item.active');
+  const currentIndex = Array.from(items).indexOf(active);
+  const nextIndex = (currentIndex + 2) % items.length;
+  
+  active.classList.remove('active');
+  items[nextIndex].classList.add('active');
+  
+  updateCarouselButtons(carousel);
+}
+
+function previousLogo(button) {
+  const carousel = button.closest('.logo-carousel');
+  const container = carousel.querySelector('.client-logo-container');
+  const items = container.querySelectorAll('.client-item');
+  const active = container.querySelector('.client-item.active');
+  const currentIndex = Array.from(items).indexOf(active);
+  const prevIndex = (currentIndex - 2 + items.length) % items.length;
+  
+  active.classList.remove('active');
+  items[prevIndex].classList.add('active');
+  
+  updateCarouselButtons(carousel);
+}
+
+// Initialize carousel buttons on page load
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.logo-carousel').forEach(carousel => {
+      updateCarouselButtons(carousel);
+  });
+
+  // Image Modal Functionality
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalCaption = document.getElementById('modalCaption');
+  const closeBtn = document.getElementsByClassName('modal-close')[0];
+
+  // Add click event to all product images
+  document.querySelectorAll('.product-figure img').forEach(img => {
+      img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+          modalCaption.innerHTML = this.alt;
+      });
+  });
+
+  // Close modal when clicking the X button
+  closeBtn.onclick = function() {
+      modal.style.display = 'none';
+  }
+
+  // Close modal when clicking outside the image
+  modal.onclick = function() {
+      modal.style.display = 'none';
+  }
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && modal.style.display === 'block') {
+          modal.style.display = 'none';
+      }
+  });
+
+  // Simple Card Gallery Functionality
+  const galleryModal = document.getElementById('galleryModal');
+  const galleryMainImage = document.getElementById('galleryMainImage');
+  const thumbnailContainer = document.getElementById('thumbnailContainer');
+  const galleryCloseBtn = document.querySelector('.gallery-close');
+  const galleryPrevBtn = document.getElementById('galleryPrevBtn');
+  const galleryNextBtn = document.getElementById('galleryNextBtn');
+
+  // Gallery data for each simple card
+  const galleryData = {
+      'MAIN BREAKER INSTALLATION & REBARRING': [
+          'tabuko_photos/q1.png',
+          'tabuko_photos/q2.png',
+          'tabuko_photos/q3.png',
+          'tabuko_photos/q4.png',
+          'tabuko_photos/q5.png',
+          'tabuko_photos/q6.png',
+          'tabuko_photos/q7.png',
+          'tabuko_photos/q8.png'
+      ],
+      'Preventive Maintenance Service of ATS': [
+          'tabuko_photos/pms1.jpg',
+          'tabuko_photos/pms2.jpg',
+          'tabuko_photos/pms3.jpg',
+          'tabuko_photos/pms4.jpg',
+          'tabuko_photos/pms5.jpg',
+          'tabuko_photos/pms6.jpg',
+          'tabuko_photos/pms7.jpg',
+          'tabuko_photos/pms8.jpg'
+      ],
+      'Fabrication of GenSet Power House Canopy': [
+          'tabuko_photos/genset1.png',
+          'tabuko_photos/genset2.png',
+          'tabuko_photos/genset3.png',
+          'tabuko_photos/genset4.png',
+          'tabuko_photos/genset5.png',
+          'tabuko_photos/genset6.png',
+          'tabuko_photos/genset7.png',
+          'tabuko_photos/genset8.png'
+      ],
+      'Repair & Reconditioning': [
+          'tabuko_photos/repair1.png',
+          'tabuko_photos/repair2.png',
+          'tabuko_photos/repair3.png',
+          'tabuko_photos/repair4.png',
+          'tabuko_photos/repair5.png',
+          'tabuko_photos/repair6.png',
+      ],
+      'Replacement of Defective Engine Controller': [
+          'tabuko_photos/replacement1.jpg',
+          'tabuko_photos/replacement2.jpg',
+          'tabuko_photos/replacement3.jpg',
+          'tabuko_photos/replacement4.jpg',
+          'tabuko_photos/replacement5.jpg',
+          'tabuko_photos/replacement6.jpg',
+          'tabuko_photos/replacement7.jpg',
+          'tabuko_photos/replacement8.jpg'
+      ],
+      'Troubleshooting & Maintenance': [
+          'tabuko_photos/1.png',
+          'tabuko_photos/2.png',
+          'tabuko_photos/3.png',
+          'tabuko_photos/4.png',
+          'tabuko_photos/7.jpg',
+          'tabuko_photos/6.png',
+          'tabuko_photos/5.png',
+          'tabuko_photos/8.png',
+          'tabuko_photos/9.png'
+      ],
+      'Preventive Maintenance': [
+          'tabuko_photos/ek1.jpg',
+          'tabuko_photos/ek2.jpg',
+          'tabuko_photos/ek3.jpg',
+          'tabuko_photos/ek4.jpg',
+          'tabuko_photos/ek5.jpg',
+          'tabuko_photos/ek6.jpg',
+          'tabuko_photos/ek7.jpg',
+          'tabuko_photos/ek8.jpg'
+      ],
+       'Upgrading of Analog Engine Controller to Digital': [
+          'tabuko_photos/analog1.jpg',
+          'tabuko_photos/analog2.jpg',
+          'tabuko_photos/analog3.jpg',
+          'tabuko_photos/analog4.jpg',
+          'tabuko_photos/analog5.jpg',
+          'tabuko_photos/analog6.jpg',
+          'tabuko_photos/analog7.jpg',
+          'tabuko_photos/analog8.jpg'
+      ],
+      'Supply Delivery and Installation of Engine Controller': [
+          'tabuko_photos/mmda1.jpg',
+          'tabuko_photos/mmda2.jpg',
+          'tabuko_photos/mmda9.jpg',
+          'tabuko_photos/mmda4.jpg',
+          'tabuko_photos/mmda5.jpg',
+          'tabuko_photos/mmda6.jpg',
+          'tabuko_photos/mmda7.jpg',
+          'tabuko_photos/mmda8.jpg'
+      ]
+
+  };
+
+  let currentGallery = [];
+  let currentImageIndex = 0;
+
+  // Add click event to simple card images
+  document.querySelectorAll('.simple-card-image').forEach(img => {
+      img.addEventListener('click', function() {
+          const cardTitle = this.closest('.simple-card').querySelector('h3').textContent;
+          currentGallery = galleryData[cardTitle] || [this.src];
+          currentImageIndex = 0;
+          
+          openGallery();
+          updateGalleryImage();
+      });
+  });
+
+  function openGallery() {
+      galleryModal.style.display = 'block';
+      createThumbnails();
+  }
+
+  function createThumbnails() {
+      thumbnailContainer.innerHTML = '';
+      
+      currentGallery.forEach((imageSrc, index) => {
+          const thumbnail = document.createElement('img');
+          thumbnail.src = imageSrc;
+          thumbnail.className = 'thumbnail';
+          if (index === 0) thumbnail.classList.add('active');
+          
+          thumbnail.addEventListener('click', () => {
+              currentImageIndex = index;
+              updateGalleryImage();
+          });
+          
+          thumbnailContainer.appendChild(thumbnail);
+      });
+  }
+
+  function updateGalleryImage() {
+      galleryMainImage.src = currentGallery[currentImageIndex];
+      
+      // Update active thumbnail
+      document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
+          thumb.classList.toggle('active', index === currentImageIndex);
+      });
+  }
+
+  function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
+      updateGalleryImage();
+  }
+
+  function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+      updateGalleryImage();
+  }
+
+  // Gallery navigation
+  galleryNextBtn.addEventListener('click', nextImage);
+  galleryPrevBtn.addEventListener('click', prevImage);
+
+  // Close gallery modal
+  galleryCloseBtn.onclick = function() {
+      galleryModal.style.display = 'none';
+  }
+
+  galleryModal.onclick = function(e) {
+      if (e.target === galleryModal) {
+          galleryModal.style.display = 'none';
+      }
+  };
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(event) {
+      if (galleryModal.style.display === 'block') {
+          if (event.key === 'Escape') {
+              galleryModal.style.display = 'none';
+          } else if (event.key === 'ArrowRight') {
+              nextImage();
+          } else if (event.key === 'ArrowLeft') {
+              prevImage();
+          }
+      }
+  });
+
+  // Card Pagination Functionality
+  let currentCardSet = 0;
+  const allCards = [
+      { img: 'tabuko_photos/breakerinstallation.png', title: 'MAIN BREAKER INSTALLATION & REBARRING', desc: 'DOST' },
+      { img: 'tabuko_photos/pmsats.jpg', title: 'Preventive Maintenance Service of ATS', desc: 'Coast Boracay Hotel' },
+      { img: 'tabuko_photos/genset.jpg', title: 'Fabrication of GenSet Power House Canopy', desc: 'Murata' },
+      { img: 'tabuko_photos/repair.jpg', title: 'Repair & Reconditioning', desc: 'National Grid of the Philippines' },
+      { img: 'tabuko_photos/replacement.jpg', title: 'Replacement of Defective Engine Controller', desc: 'Philippine National Oil Company Bataan' },
+      { img: 'tabuko_photos/troubleshoot.jpg', title: 'Troubleshooting & Maintenance', desc: 'Philippine National Oil Company Bataan' },
+      { img: 'tabuko_photos/ek.jpg', title: 'Preventive Maintenance', desc: 'Enchanted Kingdom' },
+      { img: 'tabuko_photos/analog.jpg', title: 'Upgrading of Analog Engine Controller to Digital', desc: 'National Grid of the Philippines' },
+      { img: 'tabuko_photos/mmda3.jpg', title: 'Supply Delivery and Installation of Engine Controller', desc: 'Metropolitan Manila Development Authority' }
+  ];
+
+  // determine how many cards should be visible per page based on viewport width
+  function getCardsPerSet() {
+      // breakpoints roughly match the CSS grid adjustments
+      if (window.innerWidth <= 900) {
+          return 2;   // mobile / small tablet
+      }
+      return 4;       // default desktop
+  }
+
+  function showNextCards() {
+      const totalSets = Math.ceil(allCards.length / getCardsPerSet());
+      
+      if (currentCardSet < totalSets - 1) {
+          currentCardSet++;
+          updateCardDisplay();
+      }
+  }
+
+  function showPreviousCards() {
+      if (currentCardSet > 0) {
+          currentCardSet--;
+          updateCardDisplay();
+      }
+  }
+
+  function updateCardDisplay() {
+      const cardsContainer = document.querySelector('.simple-cards-grid');
+      const cards = cardsContainer.querySelectorAll('.simple-card');
+      const perSet = getCardsPerSet();
+      const totalSets = Math.ceil(allCards.length / perSet);
+      if (currentCardSet >= totalSets) {
+          currentCardSet = totalSets - 1;
+      }
+      const startIndex = currentCardSet * perSet;
+
+      // show/hide navigation buttons based on current set
+      const prevNav = document.querySelector('.card-navigation .prev-btn');
+      const nextNav = document.querySelector('.card-navigation .next-btn');
+      if (prevNav) {
+          prevNav.style.visibility = currentCardSet === 0 ? 'hidden' : 'visible';
+      }
+      if (nextNav) {
+          nextNav.style.visibility = currentCardSet >= totalSets - 1 ? 'hidden' : 'visible';
+      }
+
+      cards.forEach((card, i) => {
+          const cardIndex = startIndex + i;
+          if (cardIndex < allCards.length && i < perSet) {
+              const cardData = allCards[cardIndex];
+              const img = card.querySelector('.simple-card-image');
+              const title = card.querySelector('h3');
+              const desc = card.querySelector('p');
+
+              img.src = cardData.img;
+              img.alt = `Project ${cardIndex + 1}`;
+              title.textContent = cardData.title;
+              desc.textContent = cardData.desc;
+              card.style.display = 'block';
+          } else {
+              card.style.display = 'none';
+          }
+      });
+  }
+
+  // initialize card display and expose controls globally
+  updateCardDisplay();
+  window.showNextCards = showNextCards;
+  window.showPreviousCards = showPreviousCards;
+
+  // reflow if viewport size changes so number per set may change
+  window.addEventListener('resize', updateCardDisplay);
+
+  // reveal observer for animations
+  const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+          }
+      });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in').forEach(el => {
+      revealObserver.observe(el);
+  });
+
+  // nav shadow on scroll
+  window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.pageYOffset > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+  });
+});
+
+function openVideoModal() {
+  document.getElementById('videoModal').style.display = 'flex';
+  const video = document.querySelector('#videoModal video');
+  if (video) {
+      video.play();
+  }
+}
+
+function closeVideoModal() {
+  document.getElementById('videoModal').style.display = 'none';
+  const video = document.querySelector('#videoModal video');
+  if (video) {
+      video.pause();
+      video.currentTime = 0;
+  }
+}
+
+// Close modal when clicking outside the content
+window.onclick = function(event) {
+  const modal = document.getElementById('videoModal');
+  if (event.target == modal) {
+      closeVideoModal();
+  }
 }
 
 // Automatic carousel functionality
@@ -855,12 +1423,14 @@ function startProgress(video, fill) {
   stopProgress();
 
   function update() {
-    if (!video.duration) return;
+    if (video.paused || video.ended) return;
+
     const percent = (video.currentTime / video.duration) * 100;
     fill.style.width = percent + '%';
     rafId = requestAnimationFrame(update);
   }
-  update();
+
+  rafId = requestAnimationFrame(update);
 }
 
 function showSlide(i) {
@@ -874,14 +1444,26 @@ function showSlide(i) {
   });
 
   const video = videos[i];
-  video.play();
-  startProgress(video, fills[i]);
+
+  function playVideo() {
+    video.play();
+    startProgress(video, fills[i]);
+  }
+
+  if (video.readyState >= 1) {
+    // Metadata already loaded
+    playVideo();
+  } else {
+    // Wait until metadata loads
+    video.addEventListener('loadedmetadata', playVideo, { once: true });
+  }
 
   video.onended = () => {
     index = (index + 1) % videos.length;
     showSlide(index);
   };
 }
+
 
 nextBtn.onclick = () => {
   index = (index + 1) % videos.length;
