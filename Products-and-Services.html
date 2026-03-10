@@ -8,7 +8,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="Images/Tabuko_logo-removebg-preview.png">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product-services.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     
@@ -27,7 +27,7 @@
 
 
 <!--NAVBAR CONTENT-->
-    <nav class="navbar">
+    <nav class="navbar opaque">
       <a class="navbar-logo" href="index.html">
           <img src="./Images/Tabuko_logo-removebg-preview.png" alt="Company Logo" width="50" height="50">
           TABUKO ENERGY NETWORK CORP.
@@ -36,9 +36,9 @@
       <div class="navbar-desktop">
         <div class="navbar-links">
           <ul>
-            <li><a href="/About.html">About</a></li>
-            <li><a href="/Products-and-Services.html">Products & Services</a></li>
-            <li><a href="/ContactUs.html">Contact Us</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Products-and-Services.html">Products & Services</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
           </ul>
         </div>
         
@@ -55,311 +55,462 @@
       <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-content">
           <nav class="mobile-nav">
-            <li><a href="/About.html">About</a></li>
-            <li><a href="/Products-and-Services.html">Products & Services</a></li>
-            <li><a href="/ContactUs.html">Contact Us</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Products-and-Services.html">Products & Services</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
           </nav>
         </div>
       </div>
   </nav>
 
 <!-- HEADER -->
-<section class="header">
-    <div class="container-header">
-        <div class="hero-content fade-in-left">
-            <h1>YOUR ENERGY TO <br>POWER GENERATION.</h1>
-            <p>Your trusted partner in energy solutions.</p>
-            <a href="/about.html" class="explore-button">Explore Now →</a>
+<section class="header-about">
+    <div class="container-about">
+        <div class="hero-content-about">
+            <p>WHAT WE OFFER</p>
+            <h1>Products & Services</h1>
+            <p>Industry-leading equipment and end-to-end solutions for power generation, electrical, and mechanical systems.</p>
         </div>
-        <img src="Images/TENC Logo.png" alt="Energy Solutions" class="fade-in-right">
     </div>
 </section>
 
-    <!-- Products Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Excellence Redefined</h1>
+        <p>Discover premium quality services and innovative solutions designed to elevate your business to new heights. Experience the perfect blend of sophistication, reliability, and cutting-edge technology.</p>
+        <a href="#services" class="cta-button">Explore Our Services</a>
+    </div>
+</section>
 
-    <section class="product-section">
-        <h2 class="section-title">PRODUCTS</h2>
-    
-        <div class="filter-container fade-in">
-            <button class="filter-btn active" data-target="all">All</button>
-            <button class="filter-btn" data-target="barcol-air">BARCOL-AIR</button>
-            <button class="filter-btn" data-target="t-t-electric">T-T ELECTRIC</button>
-            <button class="filter-btn" data-target="dse">DSE</button>
-            <button class="filter-btn" data-target="pmi">PMI</button>
-        </div>
-        
-        <section id="products">
-            <div class="product-grid fade-in">
-                <!-- Barcol-Air -->
-                <div class="product-card" data-category="barcol-air">
-                    <img src="Images/EG3000XT.png" alt="BARCOL-AIR Product" class="product-image zoomable" />
-                    <p class="product-name">Woodward Easygen 3000 XT</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The Woodward easYgen-3000XT series are control units designed for managing engine-generator systems in various applications like cogeneration, standby power, automatic mains failure (AMF), peak shaving, and distributed generation. They offer features for both islanded and mains-parallel operations, including engine control, generator protection, and mains protection. The controllers are also designed for ease of use and customization, with standardized software that can be tailored for specific applications. 
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="barcol-air">
-                    <img src="Images/EasyGen-2000.png" alt="BARCOL-AIR Product" class="product-image zoomable" />
-                    <p class="product-name">Woodward Easygen 2000 Series</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The easYgen-2000 Series is a compact, affordable genset control and protection package for load sharing up to 16 gensets in island operation, or parallel operation of a single unit with a utility. Its integrated load dependent start/stop programming allows you to define how gensets are brought on- and off-line to support changing load demands. It equally works with a mix of different sized engines, so you can maintain the spinning reserve you need while optimizing fuel efficiency.
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="barcol-air">
-                    <img src="Images/Batter-Charger.png" alt="BARCOL-AIR Product" class="product-image zoomable" />
-                    <p class="product-name">BAE Intelligent Battery Recharger CBI2410A</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            In a world increasingly dependent on portable electronic devices, the need for efficient and reliable battery rechargers has never been greater. From smartphones and laptops to electric vehicles and renewable energy storage systems, batteries are integral to modern life. The BAE Intelligent Battery Recharger is poised to meet this demand with its cutting-edge features and smart technology.
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="barcol-air">
-                    <img src="Images/EasyGen-1000.png" alt="BARCOL-AIR Product" class="product-image zoomable" />
-                    <p class="product-name">Woodward Easygen 1000 Series</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The Woodward easYgen-1000 Series is a compact AMF (Automatic Mains Failure) genset controller designed for single-generator sets used in critical standby or prime power applications. It features algorithms and logic for starting, stopping, controlling, and protecting the generator set, along with communication interfaces for automatic changeover, circuit breaker operation, and mains supply monitoring. The controller offers various operational modes (auto, stop, manual) and supports different Electronic Control Unit (ECU) types.
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="barcol-air">
-                    <img src="Images/DTSC-200 ATS.png" alt="BARCOL-AIR Product" class="product-image zoomable" />
-                    <p class="product-name">Woodward DTSC-200 ATS Control</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The Woodward DTSC-200 ATS controller is a flexible digital control unit designed for seamlessly switching electrical power between multiple sources, according to Woodward and EPG Controls. It supports various transfer types (open, delayed, closed) and can be configured for diverse ATS applications like Main-Gen, Gen-Gen, or Main-Main systems. The controller also includes features like sync-check for smooth transfers, transfer inhibit, and load shed/restore options. 
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-                
-                <!--Lightbox Overlay-->
-                <div id="lightbox" class="lightbox">
-                    <span class="close-lightbox">&times;</span>
-                    <img class="lightbox-content" id="lightbox-img">
-                </div>
-
-                <!--T-T Electric -->
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/LAK-2000.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">DC Motor LAK 2000 Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The LAK 2000 range of DC motors from T-T Electric includes fully laminated, 2-pole motors, specifically the LAK 2080-2132 series. These motors are designed for high armature voltages as standard and offer high mechanical and electrical flexibility. They are known for their good commutation, low brush wear, and high thermal time constant.
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/DMP 112-180.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">DC Motor DMP 112-180 Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The DMP 112-180 range of DC motors are available in both 2 and 4 pole configurations, offering frame sizes from 112 to 180, and output power up to 250 kW (335 HP). They are known for being fully laminated and having a square frame design.
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/LAK 6000.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">DC Motor LAK 6000 Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The LAK 6000 series of DC motors, offered by T-T Electric, features 6 poles and frame sizes of 315 and 400, with outputs ranging up to 1120 kW (1500 HP). These motors are fully laminated and offer a wide range of accessories and mountings. 
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/AMP-112-335.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">AC Motor AMP-112-355 Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The T-T Electric AMP 112-355 range comprises high-performance AC motors engineered for variable speed drive applications. These asynchronous motors are designed to deliver dynamic performance comparable to DC motors, making them suitable for various industrial settings. 
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/AMS 71-132.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">AC Motor AMS-71-132 Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The T-T Electric AMS 71-132 range comprises compact, high-performance asynchronous AC motors designed for variable speed drive applications. These motors are engineered to deliver dynamic performance comparable to DC motors, making them suitable for a wide array of industrial uses.
-                        </p> 
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="t-t-electric">
-                    <img src="Images/HMP 250mm.png" alt="t-t Product" class="product-image zoomable" />
-                    <p class="product-name">AC Motor HMP 250mm Range</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The HMP 250mm range motor from T-T Electric is a high-performance AC motor designed for demanding industrial applications requiring variable speed control and robust mechanical characteristics. It is part of T-T Electric’s square-frame asynchronous motor series, engineered to deliver dynamic performance comparable to traditional DC motors, making it suitable for both new installations and retrofit projects. 
-                        </p> 
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-                
-                <!--Lightbox Overlay-->
-                <div id="lightbox" class="lightbox">
-                    <span class="close-lightbox">&times;</span>
-                    <img class="lightbox-content" id="lightbox-img">
-                </div>
-
-
-                <!--DSE -->
-                <div class="product-card" data-category="dse">
-                    <img src="Images/DSE7320.png" alt="DSE Product" class="product-image zoomable" />
-                    <p class="product-name">DSE7320 MKII</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The DSE7320 MKII is a powerful, next-generation genset control module designed for single diesel or gas generator applications. It features a Dual Core processor, extended memory, and data logging, offering faster processing and increased functionality. The module monitors various engine parameters and displays information on a back-lit LCD screen, LEDs, remote PCs, and via SMS text alerts.  
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-
-                <div class="product-card" data-category="dse">
-                    <img src="Images/DSE8610.png" alt="DSE Product" class="product-image zoomable" />
-                    <p class="product-name">DSE8610 MKII</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            The DSE8610 MKII is a sophisticated control module designed for complex load sharing and synchronizing generator applications, particularly those involving multiple generators or grid-tied systems. It handles advanced features like synchronizing up to 32 generators, both electronic and non-electronic, and provides comprehensive monitoring, metering, and protection features. The DSE8610 MKII also offers various communication and system expansion options, including remote monitoring capabilities.  
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-                
-                <!--Lightbox Overlay-->
-                <div id="lightbox" class="lightbox">
-                    <span class="close-lightbox">&times;</span>
-                    <img class="lightbox-content" id="lightbox-img">
-                </div>
-
-
-
-                <!--PMI -->
-                <div class="product-card" data-category="pmi">
-                    <img src="Images/DC-Battery-Charger.png" alt="DSE Product" class="product-image zoomable" />
-                    <p class="product-name">DC Battery Charger AC/DC</p>
-                    <div class="product-description-container">
-                        <p class="product-description">
-                            A DC battery charger that supports both AC/DC input and communication via Modbus protocol with RS485 and TCP/IP ports is a common solution for industrial applications requiring reliable power and data exchange. These chargers convert AC power to DC and can be used to charge batteries while simultaneously providing DC power to loads. The Modbus communication allows for monitoring, control, and remote management of the charger.  
-                        </p>
-                    </div>
-                    <button class="read-more-btn">Read more</button>
-                </div>
-                
-                <!--Lightbox Overlay-->
-                <div id="lightbox" class="lightbox">
-                    <span class="close-lightbox">&times;</span>
-                    <img class="lightbox-content" id="lightbox-img">
-                </div>
+<section class="features" id="features">
+    <div class="features-container">
+        <h2 class="section-title fade-in">Why Choose Us</h2>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">⚡</div>
+                <h3>Premium Quality</h3>
+                <p>Every service is crafted with meticulous attention to detail, ensuring the highest standards of excellence and durability.</p>
             </div>
-        </section>
-    </section>
-
-    <!-- Services Section -->
-  <section class="services-section">
-    <h1>Our Services</h1>
-
-    <div class="services-row">
-        <div class="service">
-            <h2>installation of battery</h2>
-            <div class="product-description-container">
-                <p class="product-description">
-                    Installing battery banks, chargers, and capacitor power factor (PF) controllers involves careful planning and execution, ensuring both safety and optimal performance. Battery banks require proper assembly, charging procedures, and safety precautions during operation, while capacitor banks necessitate correct placement, grounding, and isolation for effective power factor correction.   
-                </p>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎯</div>
+                <h3>Innovation First</h3>
+                <p>We stay ahead of the curve with cutting-edge technology and innovative solutions that drive your success forward.</p>
             </div>
-            <button class="read-more-btn">Read more</button>
-        </div>
-
-        <div class="service">
-            <h2>System design upgrading</h2>
-            <div class="product-description-container">
-                <p class="product-description">
-                    Retrofitting and upgrading power generation controls involve improving or replacing existing systems to enhance performance, extend lifespan, and address evolving needs. This can include adding new features, updating software, or replacing hardware. Retrofitting focuses on making modifications to existing systems, while upgrading often involves a more complete replacement with newer technology.    
-                </p>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🛡️</div>
+                <h3>Trusted Reliability</h3>
+                <p>Built on a foundation of trust and reliability, we deliver consistent results that exceed expectations every time.</p>
             </div>
-            <button class="read-more-btn">Read more</button>
-        </div>
-
-        <div class="service">
-            <h2>overhauling of diesel engine</h2>
-            <div class="product-description-container">
-                <p class="product-description">
-                    Overhauling a diesel engine generator assembly is a complete rebuild process that involves disassembling, inspecting, cleaning, repairing, and replacing worn or damaged components. This procedure aims to restore the engine to its optimal operating condition or enhance its performance.     
-                </p>
-            </div>
-            <button class="read-more-btn">Read more</button>
-        </div>
-
-        <div class="service">
-            <h2>preventive maintenance</h2>
-            <div class="product-description-container">
-                <p class="product-description">
-                    Preventive maintenance for electrical, mechanical, and electronic equipment involves regularly scheduled activities to inspect, clean, lubricate, and replace parts to prevent failures and maintain optimal performance. This proactive approach helps to identify potential issues early on and address them before they escalate into costly repairs or downtime.      
-                </p>
-            </div>
-            <button class="read-more-btn">Read more</button>
         </div>
     </div>
+</section>
 
-    <div class="services-row">
-        <div class="service">
-            <h2>Project/engineering management</h2>
-            <div class="product-description-container">
-                <p class="product-description">
-                    Engineering project management is a specialized field that applies project management principles to engineering projects, ensuring successful completion within time, cost, and quality constraints. It combines technical engineering knowledge with project management techniques to plan, execute, monitor, and control projects, often involving the development of new products, technologies, or processes.       
-                </p>
-            </div>
-            <button class="read-more-btn">Read more</button>
-        </div>
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="services-container">
+        <h2 class="section-title fade-in">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card slide-in-left">
+                <div class="service-image-container">
+                    <img src="tabuko_photos/pms.png" alt="Industrial Automation System">
+                    <div class="service-image-overlay"></div>
+                </div>
+                <div class="service-content">
+                    <div>
+                        <!-- Sliding Panel for Full Description -->
+                        <div class="description-panel" id="description-panel-1">
+                            <div class="panel-content">
+                                <button class="panel-close" onclick="closeDescriptionPanel(this)">×</button>
+                                <h4>Preventive Maintenance Service (PMS)</h4>
+                                <p class="panel-description">1. Fan belt (bando) and Battery charger <br> 3. Mobilization, installation and skilled labor, tools, materials for replacement of fan belt and battery charger and alignment of fan guard. <br> 3. Provide specialized technician and special tools.<br> 4. Removal of defective battery and fan belt.<br>5. Install new battery and fan belt. <br> 6. Alignment of radiator fan guard. <br> 7. Re-install, check brand new valve, install fan belt, align the radiator assembly from radiator brace. <br> 8. Testing and Commissioning of 500KVA Cummins Generator Set. <br> 9. Submit final report and recommendation <br>With Certificate of Ocular inspection</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-header">
+                            <div class="service-icon"></div>
+                            <h3>Preventive Maintenance Service</h3>
+                            <div class="service-subtitle"> (PMS)</div>
+                        </div>
+                        <p class="service-description">
+                            <span class="description-truncated">1. Fan belt (bando) and  Battery charger <br> 2. Mobilization, installation and skilled labor, tools, materials for replacement of fan belt and battery charger and alignment of fan guard.</span>
+                            <a href="#" class="read-more-btn" onclick="toggleDescription(event, this)">Read More</a>
+                        </p>
+                        <div class="previous-clients">
+                            <p class="clients-label">Previous Clients</p>
+                            <div class="logo-carousel">
+                                <button class="carousel-btn prev-btn" onclick="previousLogo(this)">❮</button>
+                                <div class="client-logo-container">
+                                    <div class="client-item active">
+                                        <img src="tabuko_photos/PAGCOR.png" alt="Client 1" class="client-logo">
+                                        <p class="client-name">Philippine Amusement <br>and Gaming<br> Corporation</p>
+                                    </div>
+                                    <div class="client-item">
+                                        <img src="tabuko_photos/comelec.png" alt="Client 2" class="client-logo">
+                                        <p class="client-name">Commission on <br>Elections</p>
+                                    </div>
+                                    <div class="client-item">
+                                        <img src="tabuko_photos/national.png" alt="Client 2" class="client-logo">
+                                        <p class="client-name">National <br>Museum</p>
+                                    </div>
+                                    <div class="client-item">
+                                        <img src="tabuko_photos/bulsu.jpg" alt="Client 2" class="client-logo">
+                                        <p class="client-name">Bulacan State <br>University</p>
+                                    </div>
+                                    <div class="client-item">
+                                        <img src="tabuko_photos/sanlo.jpg" alt="Client 2" class="client-logo">
+                                        <p class="client-name">San Lorenzo <br>Hospital</p>
+                                    </div>
+                                    <div class="client-item">
+                                        <img src="tabuko_photos/mmda.png" alt="Client 2" class="client-logo">
+                                        <p class="client-name">Metro Manila <br>Development <br>Authority</p>
+                                    </div>
+                                    <div class="client-item">
+                                        <img src="tabuko_photos/bora.jpg" alt="Client 2" class="client-logo">
+                                        <p class="client-name">Coast <br>Boracay <br>Hotel</p>
+                                    </div>
+                                    <div class="client-item">
+                                        <img src="tabuko_photos/murata.png" alt="Client 2" class="client-logo">
+                                        <p class="client-name">Murata</p>
+                                    </div>
 
-        <div class="service">
-            <h2>Onsite and depot repair</h2>
-            <div class="product-description-container">
-                <p class="product-description">
-                    Onsite and depot repair are two common types of equipment repair services, offering different levels of convenience and turnaround time. Onsite repair means a technician comes to your location to fix the problem, while depot repair requires you to send the equipment to a designated service center.        
-                </p>
+                                </div>
+                                <button class="carousel-btn next-btn" onclick="nextLogo(this)">❯</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-footer">
+                        <button class="service-btn" onclick="openVideoModal()">Request Demo</button>
+                    </div>
+                </div>
             </div>
-            <button class="read-more-btn">Read more</button>
-        </div>
 
-        <div class="service">
-            <h2>electronic controls</h2>
-            <div class="product-description-container">
-                <p class="product-description">
-                    Electronic control calibration and configuration for a generator involves ensuring accurate and reliable performance by adjusting parameters within the generator's control system. This process typically includes verifying and fine-tuning settings like voltage, frequency, and other operational parameters to match specifications and ensure proper functioning.        
-                </p>
+            <div class="service-card slide-in-right">
+                <div class="service-image-container">
+                    <img src="tabuko_photos/install.png" alt="Hydraulic Systems">
+                    <div class="service-image-overlay"></div>
+                </div>
+                <div class="service-content">
+                    <div>
+                        <!-- Sliding Panel for Full Description -->
+                        <div class="description-panel" id="description-panel-2">
+                            <div class="panel-content">
+                                <button class="panel-close" onclick="closeDescriptionPanel(this)">×</button>
+                                <h4>Hydraulic Systems</h4>
+                                <p class="panel-description">Robust hydraulic services for heavy machinery and industrial equipment with superior durability and efficiency ratings. Our comprehensive hydraulic solutions include system design, installation, maintenance, and repair services. We specialize in custom hydraulic systems tailored to your specific industrial needs, ensuring optimal performance and longevity. Our expert technicians provide 24/7 support and emergency repairs to minimize downtime and maximize productivity.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-header">
+                            <div class="service-icon">⚙️</div>
+                            <h3>Installation of ATS</h3>
+                            <div class="service-subtitle">Automatic Transfer Switch</div>
+                        </div>
+                        <p class="service-description">
+                            <span class="description-truncated">Robust hydraulic services for heavy machinery and industrial equipment with superior durability and efficiency ratings.</span>
+                            <a href="#" class="read-more-btn" onclick="toggleDescription(event, this)">Read More</a>
+                        </p>
+                        <div class="previous-clients">
+                            <p class="clients-label">Previous Clients</p>
+                            <div class="logo-carousel">
+                                <button class="carousel-btn prev-btn" onclick="previousLogo(this)">❮</button>
+                                <div class="client-logo-container">
+                                    <div class="client-item active">
+                                        <img src="tabuko_photos/bulsu.jpg" alt="Client 1" class="client-logo">
+                                        <p class="client-name">Client 1</p>
+                                    </div>
+                                    <div class="client-item">
+                                        <img src="tabuko_photos/national musem.png" alt="Client 2" class="client-logo">
+                                        <p class="client-name">Client 2</p>
+                                    </div>
+                                    <div class="client-item">
+                                        <img src="tabuko_photos/sanlo.jpg" alt="Client 2" class="client-logo">
+                                        <p class="client-name">Client 2</p>
+                                    </div>
+                                </div>
+                                <button class="carousel-btn next-btn" onclick="nextLogo(this)">❯</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-footer">
+                       <button class="service-btn" onclick="openVideoModal()">Request Demo</button>
+                    </div>
+                </div>
             </div>
-            <button class="read-more-btn">Read more</button>
         </div>
     </div>
-  </section>
+</section>
+
+<section class="image-cards" id="image-cards">
+    <div class="image-cards-container">
+        <h2 class="section-title fade-in">Other Services We Offer</h2>
+        <div class="simple-cards-grid">
+            <!-- Card 1 -->
+            <div class="simple-card fade-in">
+                <img src="tabuko_photos/breakerinstallation.png" alt="Project 1" class="simple-card-image">
+                <div class="simple-card-content">
+                    <h3>MAIN BREAKER INSTALLATION & REBARRING</h3>
+                    <p>DOST</p>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="simple-card fade-in">
+                <img src="tabuko_photos/pmsats.jpg" alt="Project 2" class="simple-card-image">
+                <div class="simple-card-content">
+                    <h3>Preventive Maintenance Service of ATS</h3>
+                    <p>Coast Boracay Hotel</p>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="simple-card fade-in">
+                <img src="tabuko_photos/genset.jpg" alt="Project 3" class="simple-card-image">
+                <div class="simple-card-content">
+                    <h3>Fabrication of GenSet Power House Canopy</h3>
+                    <p>Murata</p>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="simple-card fade-in">
+                <img src="tabuko_photos/repair.jpg" alt="Project 4" class="simple-card-image">
+                <div class="simple-card-content">
+                    <h3>Repair & Reconditioning</h3>
+                    <p>National Grid of the Philippines</p>
+                </div>
+            </div>
+             <div class="simple-card fade-in">
+                <img src="tabuko_photos/replacement.jpg" alt="Project 4" class="simple-card-image">
+                <div class="simple-card-content">
+                    <h3>Replacement of Defective Controller</h3>
+                    <p>National Grid of the Philippines</p>
+                </div>
+            </div>
+            <div class="simple-card fade-in">
+                <img src="tabuko_photos/troubleshoot.jpg" alt="Project 5" class="simple-card-image">
+                <div class="simple-card-content">
+                    <h3>Troubleshooting & Maintenance</h3>
+                    <p>Philippine National Oil Company Bataan</p>
+                </div>
+            </div>
+            <div class="simple-card fade-in">
+                <img src="tabuko_photos/ek.jpg" alt="Project 6" class="simple-card-image">
+                <div class="simple-card-content">
+                    <h3>Preventive Maintenance</h3>
+                    <p>Enchanted Kingdom</p>
+                </div>
+            </div>
+            <div class="simple-card">
+                <img src="tabuko_photos/repair.jpg" alt="Project 7" class="simple-card-image">
+                <div class="simple-card-content">
+                    <h3>Repair & Reconditioning</h3>
+                    <p>National Grid of the Philippines</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Card Navigation Controls -->
+<div class="card-navigation">
+    <button class="card-nav-btn prev-btn" onclick="showPreviousCards()">❮ Previous</button>
+    <button class="card-nav-btn next-btn" onclick="showNextCards()">Next ❯</button>
+</div>
+
+<section class="products" id="products">
+    <div class="products-container">
+        <h2 class="section-title fade-in">Our Products</h2>
+        <p class="products-intro">We offer comprehensive product solutions covering design, implementation, maintenance, and optimization. Our expert team delivers tailored products that maximize efficiency, minimize downtime, and ensure compliance with industry standards.</p>
+        <div class="products-grid">
+            <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/air cooler.png" alt="Air Pre-Cleaners">
+                    <figcaption class="product-title">Oil Filter</figcaption>
+                    <p class="part-number-label">Part Number</p>
+                </figure>
+                <div class="product-info">
+                    <ul class="product-sizes">
+                        <b><li class="size-item">P550073</li></b>
+                        <b><li class="size-item">P552075</li></b>
+                        <b><li class="size-item">P550777</li></b>
+                        <b><li class="size-item">P558615</li></b>
+                        <b><li class="size-item">P551178</li></b>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/air filter.png" alt="Air Breathers">
+                    <figcaption class="product-title">Air Filter</figcaption>
+                    <p class="part-number-label">Part Number</p>
+                </figure>
+                <div class="product-info">
+                    <ul class="product-sizes">
+                        <b><li class="size-item">P181099</li></b>
+                        <b><li class="size-item">P524838</li></b>
+                        <b><li class="size-item">P532509</li></b>
+                        <b><li class="size-item">P181056</li></b>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/engine controller.png" alt="Air Housings">
+                    <figcaption class="product-title">Engine Controller</figcaption>
+                    <p class="part-number-label">Part Number</p>
+                </figure>
+                <div class="product-info">
+                    <ul class="product-sizes">
+                        <b><li class="size-item">DSE8610</li></b> 
+                        <b><li class="size-item">DSE7320</li></b>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/battery charger.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">Battery Charger</figcaption>
+                    <p class="part-number-label">Part Number</p>
+                </figure>
+                <div class="product-info">
+                    <ul class="product-sizes">
+                        <b><li class="size-item">BAC2410</li></b>
+                    </ul>
+                </div>
+            </article>
+
+                <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/21 - Edited.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">DC Motor DMP 112-180 Range</figcaption>
+                </figure>
+            </article>
+
+                <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/20 - Edited.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">BAE Intelligent Battery Recharger CBI2410A</figcaption>
+                </figure>
+            </article>
+
+                <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/19 - Edited.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">AC Motor HMP 250mm Range</figcaption>
+                </figure>
+            </article>
+
+                <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/18 - Edited.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">Battery Charger</figcaption>
+                </figure>
+            </article>
+
+                <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/17 - Edited.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">AC Motor AMP-112-355 Range</figcaption>
+                </figure>
+            </article>
+
+                <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/16 - Edited.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">DC Motor LAK 200 Range</figcaption>
+                </figure>
+            </article>
+
+                <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/15 - Edited.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">Woodward DTSC-200 ATS Control</figcaption>
+                </figure>
+            </article>
+
+                <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/14 - Edited.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">Woodward EasyGen 100 Series</figcaption>
+                </figure>
+            </article>
+
+                <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/13 - Edited.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">Woodward EasyGen 300 XT</figcaption>
+                </figure>
+            </article>
+
+                <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/12 - Edited.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">Woodward EasyGen 200 Series</figcaption>
+                </figure>
+            </article>
+
+                <article class="product-card zoom-in">
+                <figure class="product-figure">
+                    <img src="tabuko_photos/mathew - Edited.png" alt="Air/Oil Separators">
+                    <figcaption class="product-title">DC Motor LAK 600 Range</figcaption>
+                </figure>
+            </article>
+        </div>
+    </div>
+</section>
+
+<div id="videoModal" class="video-modal">
+    <div class="video-modal-content">
+        <span class="close-video" onclick="closeVideoModal()">&times;</span>
+        <video width="100%" height="auto" controls>
+            <source src="tabuko_photos/vid2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+
+<!-- CTA band -->
+<section class="cta-band">
+    <div class="cta-inner">
+        <h2>Need a Quote or Technical Support?</h2>
+        <p>Contact us for product availability, service packages, or to discuss your power generation and electrical needs.</p>
+        <a href="ContactUs.html" class="cta-button">Contact Us</a>
+    </div>
+</section>
+
+<div id="imageModal" class="image-modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="modalCaption"></div>
+</div>
+
+<!-- Simple Card Gallery Modal -->
+<div id="galleryModal" class="image-modal">
+    <span class="modal-close gallery-close">&times;</span>
+    <div class="gallery-container">
+        <img class="gallery-main-image" id="galleryMainImage">
+        <div class="gallery-thumbnails">
+            <div class="thumbnail-container" id="thumbnailContainer"></div>
+        </div>
+    </div>
+    <div class="gallery-nav">
+        <button class="gallery-btn prev-btn" id="galleryPrevBtn">❮</button>
+        <button class="gallery-btn next-btn" id="galleryNextBtn">❯</button>
+    </div>
+</div>
 
 <!-- Footer -->
 <footer>
     <div class="footerContainer">
+        <div class="footerQuickLinks">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="ContactUs.html">Contact</a>
+        </div>
         <div class="socialIcons">
             <a href="https://www.facebook.com/TABUKOENERGY.net" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-facebook"></i>
@@ -377,7 +528,7 @@
         
     </div>
     <div class="footerBottom">
-        <p>&copy; 2025 Tabuko Energy Power Corporation | Purok 1 Brgy. Butong, Cabuyao City, Laguna, Philippines</p>
+        <p>&copy; 2025 Tabuko Energy Network Corp. | Purok 1 Brgy. Butong, Cabuyao City, Laguna, Philippines</p>
     </div>
 </footer>
 

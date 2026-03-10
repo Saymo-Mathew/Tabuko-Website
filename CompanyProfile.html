@@ -3,184 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Profile - Tabuko Energy Network Corp.</title>
-    <link rel="icon" type="image/png" href="Images/Tabuko_logo-removebg-preview.png">
-    <link rel="stylesheet" href="style.css">
+    <title>Company Profile | Tabuko Energy Network Corp.</title>
+
+    <link rel="icon" type="image/png" href="../Images/Tabuko_logo-removebg-preview.png">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <!-- SEO Meta -->
-    <meta name="description" content="Company Profile of Tabuko Energy Network Corp.">
+    <meta name="description" content="Company Profile gallery of Tabuko Energy Network Corp.">
     <meta name="robots" content="index,follow">
-    <link rel="canonical" href="/CompanyProfile.html">
+    <link rel="canonical" href="/CompanyProfile/">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Company Profile | Tabuko Energy Network Corp.">
-    <meta property="og:description" content="View our company profile and credentials.">
-    <meta property="og:url" content="/CompanyProfile.html">
+    <meta property="og:description" content="Browse our company documents and credentials.">
+    <meta property="og:url" content="/CompanyProfile/">
     <meta property="og:image" content="/Images/Tabuko_logo-removebg-preview.png">
+
+    <style>
+        /* Simple, responsive gallery */
+        body { background: #ffffff; }
+        .company-header {
+            padding: 80px 16px 24px;
+            text-align: center;
+            color: #000;
+        }
+        .company-header h1 { margin: 0; font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+        .company-header p { margin: 8px 0 0; opacity: 0.8; }
+
+        .gallery-container { max-width: 100%; margin: 0 auto; padding: 0 16px 24px; }
+        .gallery-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            background: transparent;
+            cursor: zoom-in;
+            width: 100%;
+            max-width: 780px; /* slightly narrower to feel more zoomed out */
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto; /* keep natural ratio */
+            max-height: 70vh; /* avoid filling entire viewport */
+            object-fit: contain; /* show more of the image (zoomed out) */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.03); }
+
+        /* Lightbox */
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+        .lightbox-overlay.active { display: flex; }
+        .lightbox-content { max-width: 92vw; max-height: 85vh; border-radius: 10px; object-fit: contain; transition: transform .2s ease; }
+        .lightbox-close {
+            position: absolute; top: 16px; right: 16px;
+            background: rgba(0,0,0,.5); color: #fff; border: none; font-size: 28px; cursor: pointer; border-radius: 8px; padding: 6px 10px;
+        }
+        .lightbox-prev, .lightbox-next {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(0,0,0,.5); color: #fff; border: none; font-size: 28px; cursor: pointer; border-radius: 8px; padding: 8px 12px;
+        }
+        .lightbox-prev { left: 16px; }
+        .lightbox-next { right: 16px; }
+        .lightbox-toolbar {
+            position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 10px; align-items: center; background: rgba(0,0,0,.45); color: #fff; padding: 8px 12px; border-radius: 10px;
+            font-size: 14px;
+        }
+        .lightbox-btn { background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.25); border-radius: 6px; padding: 6px 10px; cursor: pointer; }
+        .lightbox-counter { opacity: .9; }
+    </style>
 </head>
 <body>
 
+    <!-- NAVBAR (keeps the same style and order used across the site) -->
     <nav class="navbar">
-        <a class="navbar-logo" href="/index.html">
-            <img src="./Images/Tabuko_logo-removebg-preview.png" alt="Company Logo" width="50" height="50">
-            TABUKO ENERGY NETWORK CORP.
-        </a>
-        <div class="navbar-desktop">
-            <div class="navbar-links">
-                <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/Services.html">Services</a></li>
-                    <li><a href="/Products.html">Products</a></li>
-                    
-                    <li><a href="/CompanyProfile.html" aria-current="page">Company Profile</a></li>
-                    <li><a href="/ContactUs.html">Contact Us!</a></li>
-                </ul>
-            </div>
-            
+      <a class="navbar-logo" href="/index.html">
+          <img src="../Images/Tabuko_logo-removebg-preview.png" alt="Company Logo" width="50" height="50">
+          TABUKO ENERGY NETWORK CORP.
+      </a>
+      <div class="navbar-desktop">
+        <div class="navbar-links">
+          <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/Services.html">Servivces</a></li>
+              <li><a href="/Products.html">Product</a></li>
+              <li><a href="/CompanyProfile/" aria-current="page">Company Profile</a></li>
+              <li><a href="/ContactUs.html">Contact Us!</a></li>
+
+
+
+
+
+               
+          </ul>
         </div>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-        <div class="mobile-menu" id="mobile-menu">
-            <div class="mobile-menu-content">
-                <nav class="mobile-nav">
-                    <a href="/index.html" class="mobile-nav-link">Home</a>
-                    <a href="/about.html" class="mobile-nav-link">About</a>
-                    <a href="/Services.html" class="mobile-nav-link">Services</a>
-                    <a href="/Products.html" class="mobile-nav-link">Products</a>
-                    
-                    <a href="/CompanyProfile.html" class="mobile-nav-link">Company Profile</a>
-                    <a href="/ContactUs.html" class="mobile-nav-link">Contact Us!</a>
-                </nav>
-            </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+          <nav class="mobile-nav">
+            <a href="/index.html" class="mobile-nav-link">Home</a>
+            <a href="/about.html" class="mobile-nav-link">About</a>
+            <a href="/Services.html" class="mobile-nav-link">Servivces</a>
+            <a href="/Products.html" class="mobile-nav-link">Product</a>
+            <a href="/CompanyProfile/" class="mobile-nav-link" aria-current="page">Company Profile</a>
+            <a href="/ContactUs.html" class="mobile-nav-link">Contact Us!</a>
+          </nav>
         </div>
+      </div>
     </nav>
 
-    <header class="header-about header-profile">
-        <div class="container-about">
-            <div class="hero-content-about">
-                <h1>Company Profile</h1>
-                <p>Snapshots of our projects, people, and partners</p>
-            </div>
-        </div>
+    <!-- HEADER -->
+    <header class="company-header">
+        <h1>Company Profile</h1>
     </header>
 
-    <main class="profile-main">
-        <section class="profile-gallery-section">
-            <h2 class="section-title">Gallery</h2>
-            <div class="profile-gallery" id="profile-gallery" aria-live="polite"></div>
-        </section>
-    </main>
+    <!-- GALLERY -->
+    <section class="gallery-container">
+        <div class="gallery-grid" id="cp-gallery"></div>
+    </section>
 
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-        <span class="close-lightbox" role="button" aria-label="Close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" alt="Preview">
+    <!-- LIGHTBOX -->
+    <div class="lightbox-overlay" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">&#10094;</button>
+        <img class="lightbox-content" id="lightboxImg" alt="Preview" />
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next">&#10095;</button>
+        <div class="lightbox-toolbar">
+            <button class="lightbox-btn" id="zoomOut" aria-label="Zoom out">-</button>
+            <span class="lightbox-counter" id="lbCounter">1 / 22</span>
+            <button class="lightbox-btn" id="zoomIn" aria-label="Zoom in">+</button>
+        </div>
     </div>
 
-    <footer>
-        <div class="footerContainer">
-            <div class="socialIcons">
-                <a href="https://www.facebook.com/TABUKOENERGY.net" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.linkedin.com/in/mario-javier-92481772/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://x.com/TabukoEnergy" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.youtube.com/@mariojavier9850" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>
-        <div class="footerBottom">
-            <p>Copyright &copy;2025; Designed by <span class="designer">OJT's</span></p>
-        </div>
-    </footer>
-
+    <script src="../script.js"></script>
     <script>
-    // Mobile nav toggle
-    (function(){
-        var hamburger = document.getElementById('hamburger');
-        var mobileMenu = document.getElementById('mobile-menu');
-        if (hamburger && mobileMenu) {
-            hamburger.addEventListener('click', function(){
-                hamburger.classList.toggle('active');
-                mobileMenu.classList.toggle('active');
-            });
-        }
-    })();
+      // Build gallery from available files, then init lightbox
+      (function(){
+        const gallery = document.getElementById('cp-gallery');
+        const maxImages = 22; // per request
+        const bases = [
+          '../Images/updated%20company%20profile%20(1)-#.webp',
+          '../Images/updated%20company%20profile%20(1)-#.png',
+          '../Images/updated%20company%20profile%20(1)-#.jpg'
+        ];
 
-    // Build gallery using available files 1..22, tolerant of naming
-    (function(){
-        var gallery = document.getElementById('profile-gallery');
-        if (!gallery) return;
-
-        var candidates = [];
-        // Common filename bases in Images folder
-        var bases = [
-            'pic', 'pic ', 'pic1', 'image', 'img', 'photo', 'gallery', 'IMG_', 'P', 'G']
-        ;
-
-        function buildSrcList(index){
-            var idx = String(index);
-            return [
-                'Images/pic' + idx + '.png',
-                'Images/pic ' + idx + '.png',
-                'Images/pic' + idx + '.jpg',
-                'Images/pic ' + idx + '.jpg',
-                'Images/pic' + idx + ' (1).png',
-                'Images/pic' + (index === 1 ? '1 (1)' : ' ' + idx + ' (1)') + '.png',
-                'Images/' + idx + '.png',
-                'Images/' + idx + '.jpg'
-            ];
-        }
-
-        function addImage(src){
-            var wrap = document.createElement('figure');
-            wrap.className = 'profile-card';
-            var img = document.createElement('img');
-            img.alt = 'Company photo';
-            img.loading = 'lazy';
-            img.decoding = 'async';
+        function probe(src){
+          return new Promise(resolve => {
+            const img = new Image();
+            img.onload = () => resolve(src);
+            img.onerror = () => resolve(null);
             img.src = src;
-            img.addEventListener('click', function(){
-                openLightbox(src);
-            });
-            wrap.appendChild(img);
-            gallery.appendChild(wrap);
+          });
         }
 
-        function tryLoad(list, onSuccess){
-            if (!list || !list.length) return;
-            var src = list.shift();
-            var probe = new Image();
-            probe.onload = function(){ onSuccess(src); };
-            probe.onerror = function(){ tryLoad(list, onSuccess); };
-            probe.src = src;
+        function createItem(src, idx){
+          const wrap = document.createElement('div');
+          wrap.className = 'gallery-item';
+          const img = document.createElement('img');
+          img.loading = 'lazy';
+          img.alt = `Company Profile ${idx}`;
+          img.src = src;
+          wrap.appendChild(img);
+          gallery.appendChild(wrap);
         }
 
-        for (var i = 1; i <= 22; i++) {
-            tryLoad(buildSrcList(i), addImage);
+        async function build(){
+          let foundCount = 0;
+          for (let i = 1; i <= maxImages; i++) {
+            let final = null;
+            for (const base of bases) {
+              const url = base.replace('#', String(i));
+              // eslint-disable-next-line no-await-in-loop
+              const ok = await probe(url);
+              if (ok) { final = ok; break; }
+            }
+            if (final) {
+              foundCount++;
+              createItem(final, i);
+            }
+          }
+          return foundCount;
         }
 
-        // Lightbox
-        var lightbox = document.getElementById('lightbox');
-        var lightboxImg = document.getElementById('lightbox-img');
-        var closeBtn = document.querySelector('.close-lightbox');
-        function openLightbox(src){
-            if (!lightbox || !lightboxImg) return;
-            lightboxImg.src = src;
-            lightbox.style.display = 'block';
-            lightbox.setAttribute('aria-hidden', 'false');
+        build().then(count => {
+          // Enhanced lightbox with nav + zoom
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const prevBtn = document.getElementById('lightboxPrev');
+        const nextBtn = document.getElementById('lightboxNext');
+        const zoomInBtn = document.getElementById('zoomIn');
+        const zoomOutBtn = document.getElementById('zoomOut');
+        const counter = document.getElementById('lbCounter');
+
+        const images = Array.from(document.querySelectorAll('.gallery-item img'));
+        let current = 0;
+        let scale = 1;
+
+        function openAt(index){
+          current = Math.max(0, Math.min(images.length - 1, index));
+          const src = images[current].src;
+          lightboxImg.src = src;
+          scale = 1;
+          lightboxImg.style.transform = `scale(${scale})`;
+          if (counter) counter.textContent = `${current + 1} / ${images.length}`;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
         }
+
+        images.forEach((img, idx) => img.addEventListener('click', () => openAt(idx)));
+
         function closeLightbox(){
-            if (!lightbox) return;
-            lightbox.style.display = 'none';
-            lightbox.setAttribute('aria-hidden', 'true');
+          lightbox.classList.remove('active');
+          lightboxImg.src = '';
+          document.body.style.overflow = '';
         }
-        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-        if (lightbox) lightbox.addEventListener('click', function(e){ if(e.target === lightbox) closeLightbox(); });
-        document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
-    })();
+        function next(){ openAt(current + 1); }
+        function prev(){ openAt(current - 1); }
+        function zoom(delta){
+          scale = Math.max(0.5, Math.min(3, scale + delta));
+          lightboxImg.style.transform = `scale(${scale})`;
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+        nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+        prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+        zoomInBtn.addEventListener('click', (e) => { e.stopPropagation(); zoom(0.2); });
+        zoomOutBtn.addEventListener('click', (e) => { e.stopPropagation(); zoom(-0.2); });
+
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+          if (!lightbox.classList.contains('active')) return;
+          if (e.key === 'Escape') return closeLightbox();
+          if (e.key === 'ArrowRight') return next();
+          if (e.key === 'ArrowLeft') return prev();
+          if (e.key === '+') return zoom(0.2);
+          if (e.key === '-') return zoom(-0.2);
+        });
+
+        // Swipe support
+        let startX = 0;
+        lightbox.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, {passive:true});
+        lightbox.addEventListener('touchend', (e) => {
+          const endX = e.changedTouches[0].clientX;
+          const diff = startX - endX;
+          if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); }
+        });
+        });
+      })();
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script> if (window.AOS) AOS.init(); </script>
 </body>
 </html>
 
