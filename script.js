@@ -990,20 +990,36 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-function openVideoModal() {
-  document.getElementById('videoModal').style.display = 'flex';
-  const video = document.querySelector('#videoModal video');
+function openVideoModal(button) {
+  const videoModal = document.getElementById('videoModal');
+  const video = videoModal.querySelector('video');
+  const source = videoModal.querySelector('#videoSource');
+  // If the triggering button carries a data-video attribute, update source
+  if (button && source) {
+      const videoSrc = button.getAttribute('data-video');
+      if (videoSrc) {
+          source.src = videoSrc;
+          if (video) video.load();
+      }
+  }
+  videoModal.style.display = 'flex';
   if (video) {
       video.play();
   }
 }
 
 function closeVideoModal() {
-  document.getElementById('videoModal').style.display = 'none';
-  const video = document.querySelector('#videoModal video');
+  const videoModal = document.getElementById('videoModal');
+  videoModal.style.display = 'none';
+  const video = videoModal.querySelector('video');
   if (video) {
       video.pause();
       video.currentTime = 0;
+  }
+  // optionally clear source so it doesn't keep previous media
+  const source = videoModal.querySelector('#videoSource');
+  if (source) {
+      source.src = '';
   }
 }
 

@@ -179,7 +179,7 @@
                         </div>
                     </div>
                     <div class="service-footer">
-                        <button class="service-btn" onclick="openVideoModal()">Request Demo</button>
+                        <button class="service-btn" onclick="openVideoModal(this)" data-video="tabuko_photos/pms vid.mp4">Request Demo</button>
                     </div>
                 </div>
             </div>
@@ -232,8 +232,9 @@
                         </div>
                     </div>
                     <div class="service-footer">
-                       <button class="service-btn" onclick="openVideoModal()">Request Demo</button>
+                       <button class="service-btn" onclick="openVideoModal(this)" data-video="tabuko_photos/v1.mp4">Request Demo</button>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -466,7 +467,8 @@
     <div class="video-modal-content">
         <span class="close-video" onclick="closeVideoModal()">&times;</span>
         <video width="100%" height="auto" controls>
-            <source src="tabuko_photos/vid2.mp4" type="video/mp4">
+            <!-- source will be updated dynamically based on the button clicked -->
+            <source id="videoSource" src="" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
