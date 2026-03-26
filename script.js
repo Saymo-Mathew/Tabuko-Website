@@ -999,7 +999,15 @@ function openVideoModal(button) {
       const videoSrc = button.getAttribute('data-video');
       if (videoSrc) {
           source.src = videoSrc;
-          if (video) video.load();
+          if (video) {
+              video.load();
+              // Set reduced height specifically for ATS.mp4
+              if (videoSrc.includes('ATS.mp4')) {
+                  video.style.height = '500px';
+              } else {
+                  video.style.height = 'auto';
+              }
+          }
       }
   }
   videoModal.style.display = 'flex';
